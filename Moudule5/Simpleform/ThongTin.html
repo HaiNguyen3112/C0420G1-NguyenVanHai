@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHẬP THÔNG TIN ORDER</title>
+    <style>
+        .wufoo{
+            font-family: "Lucida Grande", "Lusida Sans Unicode",Tahoma,sans-serif;
+        }
+    </style>
+</head>
+<body>
+ <form action="ThongTin.html" method="post" class="wufoo">
+     <h2>ORDER FORM</h2>
+     <p>What would you like to buy?</p>
+     <select>
+         <option>A</option>
+         <option>B (+0.5$)</option>
+         <option>C (+1$)</option>
+     </select> <br>
+     <p>How many would you like to order?</p>
+     <input type="radio" name="soluong"/> 1 - 20$ <br>
+     <input type="radio" name="soluong"/> 2 - 25$ <br>
+     <input type="radio" name="soluong"/> 3 - 30$ <br>
+     <p>Name</p>
+     <input type="text" name="firstname" placeholder="First Name"/>
+     <input type="text" name="lastname" placeholder="Last Name"/>
+     <p>Số điện thoại:</p>
+     <input type="number" />
+     <p>Email:</p>
+     <input type="text" /> <br><br>
+     <input type="button" value="Submit"/>
+
+
+ </form>
+</body>
+</html>
