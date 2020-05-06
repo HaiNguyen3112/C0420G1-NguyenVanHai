@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb41070f-6f75-4a5e-8ffb-9a3de8ade621" name="Default Changelist" comment="" />
+    <list default="true" id="b503c134-de86-4ea7-b780-ef1da3bef4f0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ToanTu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KhaiBaoBien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KhaiBaoBien/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,13 +15,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="ProjectId" id="1bXqkBGgRkaXVFmD4q4gEaj1Q7s" />
+  <component name="ProjectId" id="1bXsNfIV5wWSJJ2TjQPC6Plwd65" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,13 +39,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fb41070f-6f75-4a5e-8ffb-9a3de8ade621" name="Default Changelist" comment="" />
-      <created>1588788926622</created>
+      <changelist id="b503c134-de86-4ea7-b780-ef1da3bef4f0" name="Default Changelist" comment="" />
+      <created>1588789733645</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1588788926622</updated>
-      <workItem from="1588788928035" duration="606000" />
-      <workItem from="1588789720781" duration="13000" />
+      <updated>1588789733645</updated>
+      <workItem from="1588789735061" duration="537000" />
     </task>
     <servers />
   </component>
