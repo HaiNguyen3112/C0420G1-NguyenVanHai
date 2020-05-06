@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Survey</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <hr>
@@ -25,6 +30,18 @@
     <p> <b>Gender </b> </p>
         <input type="radio" name="gioitinh"/>Male <br>
         <input type="radio" name="gioitinh"/>Female <br>
+
+
+      <p> id="demo" onClick="myFunction()"> <input type="radio" name="gioitinh"/>Other </p>
+
+        <script>
+            function myFunction() {
+                document.getElementById("demo").style.color = "red";
+                // <input type="textarea" />.getElementbyid("demo");
+            }
+        </script>
+
+
     <p> <b>Which is your following  products have you puchased  in the last 2 month. Please check all that apply</b> </p>
         <input type="checkbox" name="sp"/> Product 1<br>
         <input type="checkbox" name="sp"/> Product 1<br>
@@ -37,8 +54,11 @@
 
 
     $ <input type="number" style="width: 100px"/>.<input type="number" style="width: 40px"/> <br>
+    <div>
+        <label style="margin-left: 10px">Dollar</label>
+        <label style="margin-left: 65px">Cent</label>
+    </div>
 
-        Dollar  Cent
 
 
 
@@ -49,7 +69,7 @@
         </textarea> <br>
     <p>Please rate your level  of agreement with the fowlling statements.</p>
 
-    <table border="2">
+    <table border="1">
         <tr>
             <th></th>
             <th>Strongly Disagree</th>
