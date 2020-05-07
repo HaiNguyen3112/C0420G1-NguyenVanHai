@@ -13,7 +13,7 @@
     <button type="button" onclick="showSub()";>Subtraction(-)</button>
     <button type="button" onclick="showMulti()";>Multiplication(X)</button>
     <button type="button" onclick="showDiv()";>Division(/)</button> <br>
-
+    <p id="kq"></p>
 </form>
 
 <script>
@@ -27,29 +27,30 @@
         let b= parseInt(document.getElementById("num2").value);
         let ketQua;
         ketQua=a+b;
+        document.getElementById("kq").innerHTML = ("Result: "+ketQua);
 
-        alert(ketQua);
     }
     function showSub() {
         let a= parseInt(document.getElementById("num1").value);
         let b= parseInt(document.getElementById("num2").value);
         let ketQua;
         ketQua=a-b;
-        alert(ketQua);
+        document.getElementById("kq").innerHTML = ("Result: "+ketQua);
+
     }
     function showMulti() {
         let a= parseInt(document.getElementById("num1").value);
         let b= parseInt(document.getElementById("num2").value);
         let ketQua;
         ketQua=a*b;
-        alert(ketQua);
+        document.getElementById("kq").innerHTML = ("Result: "+ketQua);
     }
     function showDiv() {
         let a= parseInt(document.getElementById("num1").value);
         let b= parseInt(document.getElementById("num2").value);
         let ketQua;
         ketQua=a/b;
-        alert(ketQua);
+        document.getElementById("kq").innerHTML = ("Result: "+ketQua);
     }
 
 </script>
