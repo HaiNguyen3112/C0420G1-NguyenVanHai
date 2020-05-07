@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+<form>
+    <input type="number" id="num1"></input>
+    <input type="number" id="num2"></input> <br>
+    <button type="button" onclick="showAdd()";>Addition(+)</button>
+    <button type="button" onclick="showSub()";>Subtraction(-)</button>
+    <button type="button" onclick="showMulti()";>Multiplication(X)</button>
+    <button type="button" onclick="showDiv()";>Division(/)</button> <br>
+
+</form>
+
+<script>
+
+    // let a=document.getElementById("num1").value;
+    // let b=document.getElementById("num2").value;
+    // let ketQua;
+
+    function showAdd() {
+        let a= parseInt(document.getElementById("num1").value);
+        let b= parseInt(document.getElementById("num2").value);
+        let ketQua;
+        ketQua=a+b;
+
+        alert(ketQua);
+    }
+    function showSub() {
+        let a= parseInt(document.getElementById("num1").value);
+        let b= parseInt(document.getElementById("num2").value);
+        let ketQua;
+        ketQua=a-b;
+        alert(ketQua);
+    }
+    function showMulti() {
+        let a= parseInt(document.getElementById("num1").value);
+        let b= parseInt(document.getElementById("num2").value);
+        let ketQua;
+        ketQua=a*b;
+        alert(ketQua);
+    }
+    function showDiv() {
+        let a= parseInt(document.getElementById("num1").value);
+        let b= parseInt(document.getElementById("num2").value);
+        let ketQua;
+        ketQua=a/b;
+        alert(ketQua);
+    }
+
+</script>
+
+</body>
+</html>
