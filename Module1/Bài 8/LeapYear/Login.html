@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<script>
+
+    let a = prompt("Tên đăng nhập: ","");
+    if(a=="admin"){
+        let b = prompt("Nhập PassWord: ","");
+        if(b=="TheMaster"){
+            alert("Welcome");
+        } else if(b==null){
+            alert("Canceled");
+        } else alert("Wrong PassWord");
+
+    } else if(a==null){
+        alert("Canceled");
+    } else alert("I don't know you");
+
+</script>
+
+</body>
+</html>
