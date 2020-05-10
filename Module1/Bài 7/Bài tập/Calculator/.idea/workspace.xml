@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28253fbc-f03d-44c7-bbce-e908d2526a71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Bài 9/evenMouse/index-BMI.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Bài 9/evenMouse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Bài 9/evenMouse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Bài 9/evenMouse/nobita.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Bài 9/evenMouse/nobita.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +34,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChangeMoney/Main.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,6 +60,7 @@
       <workItem from="1588835736718" duration="5433000" />
       <workItem from="1588845554785" duration="560000" />
       <workItem from="1588901302745" duration="764000" />
+      <workItem from="1589085792522" duration="712000" />
     </task>
     <servers />
   </component>

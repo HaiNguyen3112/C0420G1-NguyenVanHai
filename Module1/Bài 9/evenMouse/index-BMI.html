@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+    <p>Nhập cân nặng: </p>
+    <input type="number" id="nang"> <br>
+    <p>Nhập chiều cao:</p>
+    <input type="number" id="cao"> <br>
+    <button type="button" onclick="tinh()";>Tính</button>
+    <p id="kq"></p>
+
+</form>
+
+<script>
+
+    function tinh(){
+        let weight = parseFloat(document.getElementById("nang").value);
+        let height = parseFloat(document.getElementById("cao").value);
+        let bmi =(weight/(height*height) );
+        document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi);
+        if (bmi < 18)
+            document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
+                                                        + "\n Underweight");
+        else if (bmi < 25.0)
+            document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
+                                                        +"<br> Normal");
+        else if (bmi < 30.0)
+            document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
+                                                        + "\n Overweight");
+        else
+        document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
+                                                        +"\n Obese");
+    }
+
+</script>
+
+</body>
+</html>
