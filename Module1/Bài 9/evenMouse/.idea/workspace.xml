@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="689db49e-40af-407f-a4ac-eb0126e23b78" name="Default Changelist" comment="" />
+    <list default="true" id="b138ae51-eb2d-43ac-9951-5bbf8996dc6d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/even.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bài 8/WitchCase/toanTu3Ngoi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Bài 8/WitchCase/toanTu3Ngoi/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +18,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1bhPLsW0i3ZoAR5sEqAAtW5Yi8T" />
+  <component name="ProjectId" id="1bhRtTy1U54eEUfYrMx06J2ORKD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,22 +37,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="689db49e-40af-407f-a4ac-eb0126e23b78" name="Default Changelist" comment="" />
-      <created>1589081299345</created>
+      <changelist id="b138ae51-eb2d-43ac-9951-5bbf8996dc6d" name="Default Changelist" comment="" />
+      <created>1589082553553</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1589081299345</updated>
-      <workItem from="1589081300772" duration="1244000" />
+      <updated>1589082553553</updated>
+      <workItem from="1589082555060" duration="789000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="548" y="158" key="FileChooserDialogImpl" timestamp="1589082543560">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="548" y="158" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589082543560" />
   </component>
 </project>
