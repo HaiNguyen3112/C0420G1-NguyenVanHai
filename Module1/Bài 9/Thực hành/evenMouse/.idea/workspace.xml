@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b138ae51-eb2d-43ac-9951-5bbf8996dc6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/evenMouse.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/even.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-BMI.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nobita.html" beforeDir="false" />
-    </list>
+    <list default="true" id="b138ae51-eb2d-43ac-9951-5bbf8996dc6d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,8 +46,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589082553553</updated>
-      <workItem from="1589082555060" duration="4786000" />
-      <workItem from="1589087397134" duration="40000" />
+      <workItem from="1589082555060" duration="4667000" />
     </task>
     <servers />
   </component>
@@ -64,9 +54,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1589087407302">
+    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1589085786471">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589087407302" />
+    <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589085786471" />
   </component>
 </project>
