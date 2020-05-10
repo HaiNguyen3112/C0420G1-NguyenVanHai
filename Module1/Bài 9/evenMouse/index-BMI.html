@@ -19,22 +19,24 @@
 <script>
 
     function tinh(){
+
         let weight = parseFloat(document.getElementById("nang").value);
         let height = parseFloat(document.getElementById("cao").value);
         let bmi =(weight/(height*height) );
-        document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi);
+
+
         if (bmi < 18)
             document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
-                                                        + "\n Underweight");
+                                                        + "<br> Underweight");
         else if (bmi < 25.0)
             document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
                                                         +"<br> Normal");
         else if (bmi < 30.0)
             document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
-                                                        + "\n Overweight");
+                                                        + "<br> Overweight");
         else
         document.getElementById("kq").innerHTML = ("Chỉ số BMI là : "+bmi
-                                                        +"\n Obese");
+                                                        +"<br> Obese");
     }
 
 </script>

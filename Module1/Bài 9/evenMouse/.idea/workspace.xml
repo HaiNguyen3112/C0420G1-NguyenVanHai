@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b138ae51-eb2d-43ac-9951-5bbf8996dc6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/index-BMI.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Bài 7/Bài tập/Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Bài 7/Bài tập/Calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nobita.html" beforeDir="false" afterPath="$PROJECT_DIR$/nobita.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-BMI.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-BMI.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589082553553</updated>
-      <workItem from="1589082555060" duration="4462000" />
+      <workItem from="1589082555060" duration="4565000" />
     </task>
     <servers />
   </component>
