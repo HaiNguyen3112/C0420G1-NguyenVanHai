@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<body>
+<img id="img0" src="image/cat0.jpg" onclick="changeImage('0')" style="width: 500px;height: 100px"/><br>
+<img id="img1" src="image/monkey1.jpg" onclick="changeImage('1')" style="width: 500px;height: 100px"/><br>
+<img id="img2" src="image/monkey2.jpg" onclick="changeImage('2')" style="width: 500px;height: 100px"/><br>
+<img id="img3" src="image/cat3.jpg" onclick="changeImage('3')" style="width: 500px;height: 100px"/><br>
+<img id="img4" src="image/panda4.jpg" onclick="changeImage('4')" style="width: 500px;height: 100px"/><br>
+
+<script>
+    function changeImage(indexImg) {
+        let tempImg0 = document.getElementById("img0");
+        let tempImg1 = document.getElementById("img1");
+        let tempImg2 = document.getElementById("img2");
+        let tempImg3 = document.getElementById("img3");
+        let tempImg4 = document.getElementById("img4");
+
+        switch (indexImg) {
+            case "0":
+            {
+                if(tempImg0.getAttribute("src")=="image/cat0.jpg")
+                    tempImg0.src = "image/monkey0.jpg";
+                else if(tempImg0.getAttribute("src")== "image/panda0.jpg")
+                            tempImg0.src = "image/cat0.jpg";
+                    else tempImg0.src = "image/panda0.jpg";
+                break;
+            }
+            case "1":
+            {
+                if(tempImg1.getAttribute("src")=="image/cat1.jpg")
+                    tempImg1.src = "image/monkey1.jpg";
+                else if(tempImg1.getAttribute("src")== "image/panda1.jpg")
+                    tempImg1.src = "image/cat1.jpg";
+                else tempImg1.src = "image/panda1.jpg";
+                break;
+            }
+            case "2":
+            {
+                if(tempImg2.getAttribute("src")=="image/cat2.jpg")
+                    tempImg2.src = "image/monkey2.jpg";
+                else if(tempImg2.getAttribute("src")== "image/panda2.jpg")
+                    tempImg2.src = "image/cat2.jpg";
+                else tempImg2.src = "image/panda2.jpg";
+                break;
+            }
+            case "3":
+            {
+                if(tempImg3.getAttribute("src")=="image/cat3.jpg")
+                    tempImg3.src = "image/monkey3.jpg";
+                else if(tempImg3.getAttribute("src")== "image/panda3.jpg")
+                    tempImg3.src = "image/cat3.jpg";
+                else tempImg3.src = "image/panda3.jpg";
+                break;
+            }
+            case "4":
+            {
+                if(tempImg4.getAttribute("src")=="image/cat4.jpg")
+                    tempImg4.src = "image/monkey4.jpg";
+                else if(tempImg4.getAttribute("src")== "image/panda4.jpg")
+                    tempImg4.src = "image/cat4.jpg";
+                else tempImg4.src = "image/panda4.jpg";
+                break;
+            }
+        }
+
+
+        if(tempImg0.getAttribute("src")=="image/cat0.jpg"&&tempImg1.getAttribute("src")=="image/cat1.jpg"
+            &&tempImg2.getAttribute("src")=="image/cat2.jpg"&&tempImg3.getAttribute("src")=="image/cat3.jpg"&&tempImg4.getAttribute("src")=="image/cat4.jpg"){
+            alert("Chúc mừng")
+        }
+
+        if(tempImg0.getAttribute("src")=="image/monkey0.jpg"&&tempImg1.getAttribute("src")=="image/monkey1.jpg"
+            &&tempImg2.getAttribute("src")=="image/monkey2.jpg"&&tempImg3.getAttribute("src")=="image/monkey3.jpg"&&tempImg4.getAttribute("src")=="image/monkey4.jpg"){
+            alert("Chúc mừng")
+        }
+        if(tempImg0.getAttribute("src")=="image/panda0.jpg"&&tempImg1.getAttribute("src")=="image/panda1.jpg"
+            &&tempImg2.getAttribute("src")=="image/panda2.jpg"&&tempImg3.getAttribute("src")=="image/panda3.jpg"&&tempImg4.getAttribute("src")=="image/panda4.jpg"){
+            alert("Chúc mừng")
+        }
+
+    }
+
+</script>
+</body>
+</html>
