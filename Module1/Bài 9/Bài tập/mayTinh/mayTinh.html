@@ -62,13 +62,63 @@
 <script>
 
     function nhap1() {
-            let a = 1;
-            document.getElementById("show").innerHTML = a;
+            document.getElementById("show").innerHTML += 1;
     }
     function nhap2() {
-        let a = 2;
-        document.getElementById("show").innerHTML = a;
+        document.getElementById("show").innerHTML += 2;
     }
+    function nhap3() {
+        document.getElementById("show").innerHTML +=3;
+    }
+    function nhap4() {
+        document.getElementById("show").innerHTML +=4;
+    }
+    function nhap5() {
+        document.getElementById("show").innerHTML +=5;
+    }
+    function nhap6() {
+        document.getElementById("show").innerHTML +=6;
+    }
+    function nhap7() {
+        document.getElementById("show").innerHTML +=7;
+    }
+    function nhap8() {
+        document.getElementById("show").innerHTML +=8;
+    }
+    function nhap9() {
+        document.getElementById("show").innerHTML +=9;
+    }
+    function nhap0() {
+        document.getElementById("show").innerHTML +=0;
+    }
+
+
+
+    function phepcong() {
+        document.getElementById("show").innerHTML +="+";
+    }
+    function pheptru() {
+        document.getElementById("show").innerHTML +="-";
+    }
+    function phepnhan() {
+        document.getElementById("show").innerHTML +="*";
+    }
+    function phepchia() {
+        document.getElementById("show").innerHTML +="/";
+    }
+
+
+    function tinh() {
+        let result = (document.getElementById("show").textContent)
+        let a = parseInt(eval(result));
+         document.getElementById("show").innerHTML =a;
+    }
+    function xoa() {
+        document.getElementById("show").innerHTML = "";
+    }
+
+
+
 
 </script>
 
