@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+            height: 200px;
+            width: 200px;
+        }
+
+        button{
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+<body>
+
+<table border="1">
+    <tr style="width: 40px;height: 40px">
+        <td colspan="4"><p id="show"></p></td>
+    </tr>
+
+    <tr style="text-align: center">
+        <td><button id="1" onclick="nhap1()"; >1</button></td>
+        <td><button id="2" onclick="nhap2()";>2</button></td>
+        <td><button id="3" onclick="nhap3()";>3</button></td>
+        <td><button id="cong" onclick="phepcong()";>+</button></td>
+
+    </tr>
+
+    <tr style="text-align: center">
+        <td><button id="4" onclick="nhap4()";>4</button></td>
+        <td><button id="5" onclick="nhap5()";>5</button></td>
+        <td><button id="6" onclick="nhap6()";>6</button></td>
+        <td><button id="tru" onclick="pheptru()";>-</button></td>
+
+    </tr>
+
+    <tr style="text-align: center">
+        <td><button id="7" onclick="nhap7()";>7</button></td>
+        <td><button id="8" onclick="nhap8()";>8</button></td>
+        <td><button id="9" onclick="nhap9()";>9</button></td>
+        <td><button id="nhan" onclick="phepnhan()";>x</button></td>
+
+    </tr>
+
+    <tr style="text-align: center">
+        <td><button id="xoa" onclick="xoa()";>C</button></td>
+        <td><button id="0" onclick="nhap0()";>0</button></td>
+        <td><button id="bang" onclick="tinh()";>=</button></td>
+        <td><button id="chia" onclick="phepchia()";>/</button></td>
+
+    </tr>
+
+</table>
+
+<script>
+
+    function nhap1() {
+            let a = 1;
+            document.getElementById("show").innerHTML = a;
+    }
+    function nhap2() {
+        let a = 2;
+        document.getElementById("show").innerHTML = a;
+    }
+
+</script>
+
+</body>
+</html>
