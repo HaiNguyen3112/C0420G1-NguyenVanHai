@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập thông tin</title>
+</head>
+<body>
+
+<script>
+    let name = prompt('Tên');
+    let cmnd = prompt('CMND');
+    let birthday = prompt('Ngày sinh (mm/dd/yyyy):')
+    do{
+
+    }while (is);
+
+    let email = prompt('Email');
+    let address = prompt('Địa chỉ:');
+    let rentDays = parseInt(prompt("Số ngày thuê:"));
+    let typeCustomer = prompt("Chọn Customer:" +
+        "\n Diamond" +
+        "\n Platinum"+
+        "\n Gold"+
+        "\n Silver" +
+        "\n Member");
+    let typeService = prompt("Bảng giá: "+
+        "\n - Villa: 500$/1 ngày "+
+        "\n - House: 300$/1 ngày"+
+        "\n - Room: 100$/ 1 ngày");
+    let typeRoom = prompt("Bảng giá: "+
+        "\n - Vip"+
+        "\n - Business"+
+        "\n - Normal");
+    let disCount = parseInt(prompt("Nhập giảm giá: "));
+
+
+    // alert("Họ tên: " +name
+    //     + "\nEmail: " + email
+    //     + "\nCMND: " + cmnd
+    //     + "\nSố ngày thuê: " +rentDays
+    //     + "\nLoại phòng: " +typeCustomer
+    //     + "\nHạng khách: " +typeService);
+
+    let choose1=parseInt(prompt("1. Hiển thị thông tin KH" +
+        "\n2. Sửa thông tin" +
+        "\n3. Tổng giá: "));
+    switch (choose1) {
+        case 1:
+            prompt("Họ tên: " +name
+                + "\nEmail: " + email
+                + "\nCMND: " + cmnd
+                + "\nSố ngày thuê: " +rentDays
+                + "\nLoại phòng: " +typeService
+                + "\nHạng khách: " +typeCustomer);
+            break;
+        case 2:
+        {
+            let choose2 =parseInt(prompt("1.Họ tên: " +name
+                + "\n2. Email: " + email
+                + "\n3. CMND: " + cmnd
+                + "\n4. Số ngày thuê: " +rentDays
+                + "\n5. Loại phòng: " +typeService
+                + "\n6. Hạng khách: " +typeCustomer
+                + "\n7. Chọn hàng mục cần sửa"));
+            switch (choose2) {
+                case 1:
+                    name = prompt("Nhập lại tên: ");
+                    break;
+                case  2:
+                    email = prompt("Nhập lại email: ");
+                    break;
+                case  3:
+                    cmnd= prompt("Nhập lại CMND: ");
+                    break;
+                case  4:
+                    rentDays= prompt("Nhập số ngày thuê: ");
+                    break;
+                case 5:
+                    typeService = prompt("Nhập loại phòng: ");
+                    break;
+                case 6:
+                    typeCustomer = prompt("Nhập lại khách: ");
+                    break;
+                default: alert("Không có trong trình đơn");
+            }
+        }
+            break;
+        case 3:
+        {
+            let a;
+
+            if (typeService=="Villa"){
+                switch (typeCustomer) {
+                    case "Diamond":
+                        a=500*rentDays*(1-disCount/100) -15;
+                        break;
+                    case "Platinum":
+                        a=500*rentDays*(1-disCount/100) - 10;
+                        break;
+                    case "Gold":
+                        a=500*rentDays*(1-disCount/100) -5;
+                        break;
+                    case "Silver":
+                        a=500*rentDays*(1-disCount/100) -2;
+                        break;
+                    case  "Member":
+                        a=500*rentDays*(1-disCount/100);
+                }
+            } else if(typeService=="House"){
+                switch (typeCustomer) {
+                    case "Diamond":
+                        a=300*rentDays*(1-disCount/100)-15;
+                        break;
+                    case "Platinum":
+                        a=300*rentDays*(1-disCount/100)-10;
+                        break;
+                    case "Gold":
+                        a=300*rentDays*(1-disCount/100)-5;
+                        break;
+                    case "Silver":
+                        a=300*rentDays*(1-disCount/100)-2;
+                        break;
+                    case  "Member":
+                        a=300*rentDays*(1-disCount/100);
+                }
+            } else if(typeService=="Room"){
+                switch (typeCustomer) {
+                    case "Diamond":
+                        a=100*rentDays*(1-disCount/100)-15;
+                        break;
+                    case "Platinum":
+                        a=100*rentDays*(1-disCount/100)-10;
+                        break;
+                    case "Gold":
+                        a=100*rentDays*(1-disCount/100)-5;
+                        break;
+                    case "Silver":
+                        a=100*rentDays*(1-disCount/100)-2;
+                        break;
+                    case  "Member":
+                        a=100*rentDays*(1-disCount/100);
+                }
+            }
+
+            if(rentDays>7){
+                a=a-30;
+                if(a>=5)
+                    a=a-20;
+            }else a=a-10;
+
+            if(address=="Đà Nẵng"){
+
+                let currentYear = new Date().getFullYear();
+                let birthday1 = new Date(birthday).getFullYear();
+                let ageCustomer = currentYear - birthday1;
+                if(ageCustomer>30)
+                    a=a-2;
+                if(ageCustomer<=30 && ageCustomer>=20)
+                    a=a-1;
+
+                a=a-20;
+            } else if(address=="Huế"){
+                a=a-10
+            } else a=a-5;
+
+            alert("Tổng tiền là: "+a);
+        }
+
+            break;
+        default: alert("Failed");
+    }
+
+
+
+</script>
+
+</body>
+</html>
