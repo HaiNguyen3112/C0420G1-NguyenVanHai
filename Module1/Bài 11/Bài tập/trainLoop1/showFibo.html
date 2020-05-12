@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let a =0;
+    let b=1;
+    let text ="";
+    let sum=a+b;
+    for(let i =0;i<9;i++){
+        text +=(a +" "+b+" ");
+        a+=b;
+        b+=a;
+        sum= sum+a+b;
+
+        //Hide 2 khối If để hiển thị dãy 20 số Fi đầu tiên
+
+        // if(a%5==0){
+        //     alert("Số đầu tiên chia hết cho 5 là: "+a);
+        //     break;
+        // }
+        // if(b%5==0){
+        //     alert("Số đầu tiên chia hết cho 5 là: "+b);
+        //     break;
+        // }
+    }
+    alert(sum);
+    // document.write(text)
+
+</script>
+
+</body>
+</html>
