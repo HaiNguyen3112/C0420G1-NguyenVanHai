@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let b= parseInt(prompt("Nhập 1 số: "));
+    let a =[2,5,7,9,-15,100,-5,-6,8,12];
+    for (let i=0;i<a.length;i++){
+        if(b==a[i]){
+            alert("Có trong mảng! Nằm ở ví trí: "+i);
+            break;
+        } else if(i==(a.length-1)){
+            alert("Số nhập không có trong mảng");
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
