@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<p id="banco"></p> <br>
+<input type="button" id="btnChange" onclick="Change()" value="Change Value"></input>
+<script>
+    var a= new Array(5);
+    let sout =" ";
+    for(let i=0;i<5;i++) {
+        for (let j = 0; j < 5; j++) {
+            a[i][j]=1;
+        }
+    }
+
+
+    for (let i=0;i<5;i++){
+        // sout +="<br>";
+        for(let j=0;j<5;j++){
+            document.write(a[i][j]);
+        }
+        document.write("<br>")
+    }
+
+    // document.getElementById("banco").innerHTML = sout;
+
+</script>
+
+</body>
+</html>

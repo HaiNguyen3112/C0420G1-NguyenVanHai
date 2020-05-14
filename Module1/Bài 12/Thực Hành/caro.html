@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p id="banco"></p> <br>
+    <input type="button" id="btnChange" onclick="Change()" value="Change Value"></input>
+
+<script>
+
+    let a= new Array(5);
+    let sout =" ";
+    for(let i=0;i<5;i++) {
+        a[i]= new Array(5)
+        for (let j = 0; j < 5; j++) {
+            a[i][j] = 0;
+        }
+    }
+
+
+    for (let i=0;i<5;i++){
+        sout +="<br>";
+        for(let j=0;j<5;j++){
+          sout +=  (a[i][j]) + "&nbsp;&nbsp;";
+        }
+    }
+
+    document.getElementById("banco").innerHTML = sout;
+    
+    function Change() {
+        let x = parseInt(prompt("Vị trí hàng: "));
+        let y = parseInt(prompt("Vị trí cột: "));
+        let sout1=" ";
+
+        a[x][y]="X";
+        for (let i=0;i<5;i++) {
+            sout1 += "<br>";
+            for (let j = 0; j < 5; j++) {
+                sout1 += (a[i][j]) + "&nbsp;&nbsp;";
+            }
+
+        }
+        document.getElementById("banco").innerHTML = sout1;
+    }
+
+</script>
+
+</body>
+</html>
