@@ -9,10 +9,81 @@
 <script>
     let name = prompt('Tên');
     let cmnd = prompt('CMND');
-    let birthday = prompt('Ngày sinh (mm/dd/yyyy):')
+    let birthday;
+    let a = true;
     do{
+        birthday = prompt('Ngày sinh (mm/dd/yyyy):');
+        let m1 = parseInt(birthday.charAt(0));
+        let m2 = parseInt(birthday.charAt(1));
+        if((typeof m1)!= "number" || (typeof m2)!= "number"){
+            a=false;
+            continue;
+        }
+        let mm = parseInt(m1+m2);
 
-    }while (is);
+        let d1 = birthday.charAt(3);
+        let d2 = birthday.charAt(4);
+        if((typeof d1)!= "number" || (typeof d2)!= "number"){
+            a=false;
+            continue;
+        }
+        let dd = parseInt(d1+d2);
+
+        let y1 = birthday.charAt(6);
+        let y2 = birthday.charAt(7);
+        let y3 =  birthday.charAt(8);
+        let y4 = birthday.charAt(9);
+        let yyyy = parseInt(y1+y2+y3+y4);
+
+        if((mm>12) || (mm<1)){
+            a=false;
+            continue;
+        }
+
+        switch (mm) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                if(dd>31){
+                    a=false;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if(dd>30){
+                    a=false;
+                }
+                break;
+            case 2:
+                if(dd>29){
+                    a=false;
+                }
+                break;
+            default: a=false;
+        }
+
+
+    }while (a==true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     let email = prompt('Email');
     let address = prompt('Địa chỉ:');

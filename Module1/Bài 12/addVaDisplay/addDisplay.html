@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text "id="nhap"></input>
+<button id="btnAdd" onclick="add()">ADD</button>
+<button id="btnDis" onclick="display()">Display</button>
+<p id="result"></p>
+
+<script>
+    let a = new Array();
+    let i=0;
+    function add() {
+        let b= document.getElementById("nhap").value;
+        a.push(b);
+        alert("Giá trị "+b+" vừa được thêm vào vị trí "+i)
+        document.getElementById("nhap").value =" ";
+        i++;
+    }
+
+    function display() {
+        for(let i=0;i<a.length;i++){
+            document.getElementById("result").innerHTML += a[i];
+        }
+    }
+
+</script>
+
+</body>
+</html>
