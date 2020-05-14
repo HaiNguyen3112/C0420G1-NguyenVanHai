@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    let a=[6,4,8,2,9,10,15,1,3]
+    let max=a[0];
+    let viTri=0;
+    for(let i=1;i<a.length;i++){
+        if(max<a[i]){
+            max=a[i];
+            viTri=i;
+        }
+    }
+    alert("Số lớn nhất là: "+max+" tại vị trí "+viTri+" trong mảng")
+
+</script>
+
+</body>
+</html>
