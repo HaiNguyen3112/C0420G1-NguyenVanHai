@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let a = prompt("Nhập: ");
+    let result = [a[0]];  // Mỗi string là 1 mảng kí tự. Giá trị của mỗi phần tư là 1 kí tự.
+
+    for(let i=1;i<a.length;i++){
+        if( (a[i-1] %2==0) && (a[i]%2==0) ){
+            result.push("-",a[i])
+        } else result.push(a[i]);
+
+        alert(result)
+    }
+    document.write(result.join(""))
+
+</script>
+</body>
+</html>
+
+

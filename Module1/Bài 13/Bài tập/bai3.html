@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let up ='ABCDEFGHIJKLMNOPQRSTUV'
+    let low ='abcdefghijklmnopqrstuv'
+    let a = prompt("Nhập 1 chuỗi: ");
+    let result=[];
+
+    for(let x=0;x<a.length;x++){
+        let b;
+        for(let i=0;i<up.length;i++){
+            if(a[x] === up[i]){
+                b = a[x].toLowerCase();
+                result.push(b);
+            }
+            else if(a[x] === low[i]){
+                b =  a[x].toUpperCase()
+                result.push(b);
+            }
+            else result.push(a[x])
+        }
+
+    }
+
+    document.write(result.join(''))
+
+
+
+
+
+    // for (let x=0;x<a.length;x++){
+    //     if(up.indexOf(a[x]) !== -1){
+    //         result.push(a[x].toLowerCase());
+    //     } else if (low.indexOf(a[x]) !== -1){
+    //                 result.push(a[x].toUpperCase());
+    //             } else result.push(a[x]);
+    //
+    // }
+    // document.write(result.join(''))
+
+
+
+
+</script>
+</body>
+</html>
