@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="banco"></p> <br>
+<input type="button" id="btnChange" onclick="Change()" value="Change Value"></input>
+
+
+<script>
+    let num = parseInt(prompt("Nhập vào số cột: "));
+    let a= new Array(num);
+    let sout =" ";
+
+
+    for(let i=0;i<a.length;i++) {
+        a[i]= new Array(num)
+        for (let j = 0; j < a[i].length; j++) {
+            let count= 0;
+            a[i][j] = "<input type='button' value='.' style='width: 20px;height: 20px' onclick='changeXO(count)' />";
+            count++;
+        }
+    }
+
+
+    sout +="<table border='1'>"
+    for (let i=0;i<num;i++){
+        sout +="<tr>";
+        for(let j=0;j<num;j++){
+            sout += "<td >" +a[i][j]+ "</td>";
+        }
+        sout +="</tr>";
+    }
+    sout += "</table><br>"
+
+    document.getElementById("banco").innerHTML = sout;
+
+
+
+
+    function Change() {
+        let x = parseInt(prompt("Vị trí hàng: "));
+        let y = parseInt(prompt("Vị trí cột: "));
+        let sout1=" ";
+
+        a[x][y]="<input type='button' value='X' style='width: 20px;height: 20px' />";
+
+
+        sout1 +="<table border='1'>"
+        for (let i=0;i<num;i++){
+            sout1 +="<tr>";
+            for(let j=0;j<num;j++){
+                sout1 += "<td >" + (a[i][j]) + "</td>";
+            }
+            sout1 +="</tr>";
+        }
+        sout1 += "</table><br>"
+
+
+        document.getElementById("banco").innerHTML = sout1;
+    }
+
+
+    function changeXO(character) {
+
+        let tempt = character.toString();
+        let x = tempt[0];
+        let y = tempt[1];
+        alert(x);
+        alert(y);
+        let sout2 = " ";
+        a[x][y]="<input type='button' value='X' style='width: 20px;height: 20px' />";
+
+
+        sout2 +="<table border='1'>"
+        for (let i=0;i<num;i++){
+            sout2 +="<tr>";
+            for(let j=0;j<num;j++){
+                sout2 += "<td >" + (a[i][j]) + "</td>";
+            }
+            sout2 +="</tr>";
+        }
+        sout2 += "</table><br>"
+
+
+        document.getElementById("banco").innerHTML = sout2;
+    }
+
+</script>
+
+</body>
+</html>
