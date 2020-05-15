@@ -11,6 +11,7 @@
 
 
 <script>
+    let check =true;
     let num = parseInt(prompt("Nhập vào số cột: "));
     let a= new Array(num);
     let sout =" ";
@@ -20,7 +21,7 @@
         a[i]= new Array(num)
         for (let j = 0; j < a[i].length; j++) {
             let count= 0;
-            a[i][j] = "<input type='button' value='.' style='width: 20px;height: 20px' onclick='changeXO(count)' />";
+            a[i][j] = "<input type='button' value='.' style='width: 20px;height: 20px' onclick='changeXO("+i+","+j+")' />";
             count++;
         }
     }
@@ -64,15 +65,23 @@
     }
 
 
-    function changeXO(character) {
+    function changeXO(x,y) {
 
-        let tempt = character.toString();
-        let x = tempt[0];
-        let y = tempt[1];
-        alert(x);
-        alert(y);
+        // let tempt = character.toString();
+        // let x = tempt[0];
+        // let y = tempt[1];
+        // alert(x);
+        // alert(y);
         let sout2 = " ";
-        a[x][y]="<input type='button' value='X' style='width: 20px;height: 20px' />";
+
+        if(check){
+            a[x][y]="<input type='button' value='X' style='width: 20px;height: 20px' />";
+            check=false;
+        } else {
+            a[x][y]="<input type='button' value='O' style='width: 20px;height: 20px' />";
+            check = true;
+        }
+
 
 
         sout2 +="<table border='1'>"

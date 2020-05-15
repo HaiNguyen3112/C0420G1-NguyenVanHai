@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p2>TYPE ANYTHING SLOWLY</p2><br>
+<textarea style="height: 200px;width: 200px" onkeydown="changeText()"></textarea>
+
+<script>
+
+    function changeText() {
+        let b= "I LOVE YOU"
+        let a ="";
+        let count=0;
+        while (count<b.length){
+            a+=b[count];
+            count++
+        }
+        document.getElementById().innerHTML += a;
+        setTimeout("changeText()",1);
+    }
+
+</script>
+
+</body>
+</html>
