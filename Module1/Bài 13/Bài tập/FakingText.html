@@ -7,19 +7,34 @@
 <body>
 
 <p2>TYPE ANYTHING SLOWLY</p2><br>
-<textarea style="height: 200px;width: 200px" onkeydown="changeText()"></textarea>
+<form name="f">
+    <textarea style="height: 200px;width: 200px" onkeydown="changeText() " name="txt"></textarea>
+</form>
+
 
 <script>
 
     function changeText() {
-        let b= "I LOVE YOU"
+        let temp = document.f.txt.value;
+        let j = temp.length;
+        let b= "I LOVE YOU !!!!!"
         let a ="";
         let count=0;
-        while (count<b.length){
-            a+=b[count];
-            count++
+        // while (count<b.length){
+        //     a+=b[count];
+        //     count++
+        // }
+        if(j>0){
+            for(let i=0;i<j;i++){
+                a += b[i];
+                if(i==b.length){
+                    document.f.txt.value = "";
+                    a = "";
+                }
+            }
         }
-        document.getElementById().innerHTML += a;
+        document.f.txt.value = a;
+        a="";
         setTimeout("changeText()",1);
     }
 
