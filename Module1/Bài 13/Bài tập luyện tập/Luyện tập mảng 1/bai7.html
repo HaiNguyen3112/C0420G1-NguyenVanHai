@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let a= new Array(10);
+    let firt = new Array(10);
+    let count= 0;
+    let d=0;
+    while(count<10){
+        let b = parseInt(prompt("Nhập vào phần tử của mảng: "));
+        a[count]=b;
+        firt[count]=b;
+        count++;
+    }
+    let c =parseInt(prompt("Nhập vào số cần tìm: "));
+    for(let i=0;i<a.length;i++){
+        if(a[i] == c){
+            d++;
+            for (let j= i;j<a.length;j++){
+                a[j]=a[j+1];
+            }
+
+            a[a.length-1]= null;
+        }
+    }
+
+    if (d==0){
+        document.write("Không tìm thấy trong mảng")
+    } else{
+        document.write("Mảng trước khi xoá: "+"<br>")
+        for (let i=0;i<firt.length;i++){
+                document.write(firt[i] +" ");
+        }
+
+        document.write("<br>"+"Mảng sau khi xoá: "+"<br>");
+        for (let i=0;i<a.length;i++){
+            if(a[i]!= null){
+                document.write(a[i] +" ");
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
