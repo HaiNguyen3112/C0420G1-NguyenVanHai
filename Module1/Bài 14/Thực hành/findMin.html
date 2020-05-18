@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    
+    let a=[234,56,9,10,5,4,123,567,89,23];
+    let result = findMin(a);
+    alert("Giá trị nhỏ nhất trong mảng là: "+ a[result])
+    function findMin(arr) {
+        if(arr.length==0){
+            return -1;
+        }
+        let temp =0;
+        let min = arr[0];
+        for (let i =1;i<a.length;i++){
+            if(a[i] < min){
+                min = a[i];
+                temp = i;
+            }
+        }
+        return temp;
+    }
+
+    
+</script>
+
+</body>
+</html>
