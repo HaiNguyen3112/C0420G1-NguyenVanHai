@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let b = prompt("Nhập 1 kí tự: ");
+
+    if(findInArr(a,b) != -1){
+        alert("Số lần xuất hiện là: "+findInArr(a,b))
+    } else alert("Không có trong mảng")
+
+    function findInArr(x,y) {
+        let count =0;
+        for (let i = 0; i<x.length;i++){
+            if(x[i]==y){
+                count++;
+            }
+        }
+        if(count>0) return count;
+        return -1;
+    }
+
+
+</script>
+</body>
+</html>

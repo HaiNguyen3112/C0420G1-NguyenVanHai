@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let a= new Array(7);
+    for (let i=0;i<7;i++){
+        a[i] = parseInt(prompt("Nhập: "))
+    }
+    swapArr(a);
+    alert(a);
+
+    function swapArr(x) {
+        for (let i=0;i<x.length/2;i++){
+            let temp = x[i];
+            x[i] = x[(x.length-1)-i];
+            x[(x.length-1)-i]= temp;
+        }
+        return x;
+    }
+
+</script>
+
+</body>
+</html>
