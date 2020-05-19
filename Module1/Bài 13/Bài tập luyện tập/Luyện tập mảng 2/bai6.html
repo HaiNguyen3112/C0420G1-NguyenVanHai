@@ -9,15 +9,15 @@
 
 <script>
 
-    let a = prompt("Nhập 1 mảng kí tự: ");
-    let s = a.toString();
+    let a = "abc-123"
+    let str="";
     for(let i=0;i<a.length;i++){
-        if(s[i]==="-"){
-            s[i]="_";
+        if(a[i]==="-"){
+            str=a.replace(a[i],"_");
         }
     }
 
-    alert(s);
+    alert(str);
 
 </script>
 

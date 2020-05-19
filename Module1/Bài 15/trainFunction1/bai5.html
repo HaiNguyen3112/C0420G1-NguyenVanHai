@@ -11,16 +11,16 @@
     let a = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
     let b = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"];
     let c= prompt("Nhập vào 1 tên: ");
-    let result = findName(c);
+    let result = findName(c,a);
     if(result==-1){
         alert("Không có trong danh sách!!!")
     } else {
         alert("Ngôi sao"+a[result]+" thuộc chòm sao "+b[result]);
     }
 
-    function findName(x) {
-        for(let i =0; i<a.length;i++){
-            if(x== a[i])
+    function findName(x,y) {
+        for(let i =0; i<y.length;i++){
+            if(x== y[i])
                 return i;
         }
         return -1;
