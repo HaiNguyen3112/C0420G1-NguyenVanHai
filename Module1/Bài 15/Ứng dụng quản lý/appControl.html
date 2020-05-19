@@ -9,6 +9,7 @@
 <input id="newProduct", placeholder="New Product" type="text">
 <button onclick="add()" style="background-color: green">Add</button>
 <h4>Display all Product</h4>
+
 <p id="hienthi"></p>
 
 
@@ -27,7 +28,7 @@
 
     function edit(x) {
         let temp2 = prompt("Nhập tên muốn sửa: ");
-        if(temp2 != null){
+        if((temp2 != null) && (temp2 != "")){
             a[x]= temp2;
             document.getElementById("hienthi").innerHTML = "";
             show(a);
@@ -46,7 +47,7 @@
 
     function show(x) {
         let temp = "";
-        temp +="<table style='width: 700px;height: 200px'><tr><td style='font-weight: bold'>Product Name</td></tr>";
+        temp +="<table style='width: 700px;height: 200px'><tr><td style='font-weight: bold'>Product Name</td><td colspan='2' style='text-align: right'>"+a.length+" Products</td></tr>";
         for(let i = 0 ; i<x.length;i++){
             temp +="<tr>"
             for (let j= 0;j<3;j++){
