@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let myDate  = function (day,month,year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        this.getDay = function(){
+            return this.day;
+        }
+        this.getMonth = function () {
+            return this.month;
+        }
+        this.getYear = function () {
+            return this.year;
+        }
+
+        this.setDay = function (day) {
+            this.day = day;
+        }
+        this.setMonth = function (month) {
+            this.month = month;
+        }
+        this.setYear = function (year) {
+            this.year = year;
+        }
+
+        this.setDate = function () {
+            this.day = 31;
+            this.month = 12;
+            this.year = 1994;
+        }
+        this.toString = function () {
+
+        }
+
+    };
+
+
+    let hai = new myDate(31,12,1994);
+    let day = hai.getDay();
+    let month = hai.getMonth();
+    let year = hai.getYear();
+    alert("Ngày "+day+" tháng "+month+" năm "+year);
+
+    hai.setDay(15);
+    hai.setMonth(11);
+    hai.setYear(2004);
+
+    day = hai.getDay();
+    month = hai.getMonth();
+    year = hai.getYear();
+    alert("Ngày "+day+" tháng "+month+" năm "+year);
+
+    hai.setDate();
+    day = hai.getDay();
+    month = hai.getMonth();
+    year = hai.getYear();
+    alert("Ngày "+day+" tháng "+month+" năm "+year);
+
+</script>
+
+</body>
+</html>
