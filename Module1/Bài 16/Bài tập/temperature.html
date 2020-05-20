@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" height="1368" width="768" style="border: 1px solid #fefefe"></canvas>
+</body>
+
+<script>
+
+    function temperature(temp) {
+        this.temp = temp;
+        this.celsiusToFahrenheit = function(){
+            return ((this.temp*9)/5)+32;
+        }
+        this.celsiustoKenvin = function () {
+            return (this.temp + 273.15);
+        }
+    }
+
+    let temp = parseFloat(prompt("Nhập độ C: "));
+    var a = new temperature(temp);
+    var b = a.celsiusToFahrenheit();
+    var c = a.celsiustoKenvin();
+    alert("Độ C: "+temp+
+    "\n Độ F: "+b+
+    "\n Độ K: "+c);
+
+</script>
+
+</html>
