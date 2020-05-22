@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function Apple(weight) {
+        this.weight = 10;
+        this.isEmpty = function(){
+            if (this.weight <= 0){
+                return false;
+            } else return true;
+        }
+        this.getWeight = function () {
+            return this.weight
+        }
+        this.decrease = function () {
+            this.weight --;
+        }
+    }
+    
+    function Human(name,gender,weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+
+        this.isMale = function () {
+            if(this.gender == "male"){
+                return true;
+            }
+            else return false;
+        }
+
+        this.checkApple = function (Apple) {
+            if(Apple.getWeight() >0){
+                return true;
+            } else return false;
+        }
+
+        this.eatApple = function (Apple) {
+            Apple.decrease();
+        }
+
+        this.getName = function () {
+            return this.name;
+        }
+        this.getNam = function (name) {
+            this.name = name;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+        this.say = function (say) {
+            console.log(say);
+        }
+    }
+
+    var adam = new Human("Adam","Male",70);
+    var eva = new Human("Eva","Female",50);
+    var apple = new Apple();
+    while (apple.isEmpty()){
+        adam.eatApple(apple);
+        console.log("Quả táo còn: "+apple.getWeight()+"dv");
+        if(apple.isEmpty()){
+            adam.say("Em ăn đi")
+        } else adam.say("Em ăn hết rồi :))))")
+        eva.eatApple(apple);
+        console.log("Quả táo còn: "+apple.getWeight()+"dv");
+        if(apple.isEmpty()){
+            eva.say("Anh ăn đi")
+        } else eva.say("Anh ăn hết rồi :))))")
+
+    }
+
+
+</script>
+</body>
+</html>
