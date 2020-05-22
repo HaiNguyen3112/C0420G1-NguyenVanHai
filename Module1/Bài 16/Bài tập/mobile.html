@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+   function mobile(battery,draft,inbox,send) {
+       this.battery = battery;
+       this.draft = draft;
+       this.inbox = inbox;
+       this.send = send;
+
+       this.onOff = function () {
+            if(this.battery > 0)
+                return true;
+            else return false;
+       }
+
+       this.checkOnOff = function () {
+            if(this.onOff())
+                return true;
+            else return false;
+       }
+
+       this.inboxMessage = function (mobileMessage) {
+            this.inbox = mobileMessage;
+       }
+
+       this.draftMessage = function () {
+            var tempMessage = prompt("Soạn tin nhắn: ");
+            return tempMessage;
+       }
+       this.sendMessage = function (mobileMessage) {
+           this.send = mobileMessage;
+       }
+
+
+       var nokia = new mobile(10,"","","");
+       var iphone = new mobile(10,"","","");
+       let temp = "";
+       temp = nokia.draftMessage();
+       iphone.inboxMessage(temp);
+       alert("Tin nhắn là: "+iphone.inbox);
+
+
+   }
+
+</script>
+
+</body>
+</html>
