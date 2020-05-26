@@ -8,7 +8,7 @@
 
 <script>
 
-    var Customer = function (name,birthday,identitynumber,email,address,rentday,typeservice,typecustomer,typeroom) {
+    let Customer = function (name,birthday,identitynumber,email,address,rentday,typeservice,typecustomer,typeroom) {
         this.name = name;
         this.birthday = birthday;
         this.identityNumber = identitynumber;
@@ -19,60 +19,60 @@
         this.typeCustomer = typecustomer;
         this.typeRoom = typeroom;
 
-        this.setName = function (name) {
-            this.name = name;
-        }
+        this.setName = function (namee) {
+            this.name = namee;
+        };
         this.getName = function () {
             return this.name;
-        }
+        };
         this.setBirthday = function (birthday) {
             this.birthday = birthday;
-        }
+        };
         this.getBirthday = function () {
             return this.birthday;
-        }
+        };
         this.setIdentityNumber = function (identitynumber) {
             this.identityNumber = identitynumber;
-        }
+        };
         this.getIdentityNumber = function () {
             return this.identityNumber;
-        }
+        };
         this.setEmail = function (email) {
             this.email = email;
-        }
+        };
         this.getEmail = function () {
             return this.email;
-        }
+        };
         this.getAddress = function () {
             return this.address;
-        }
+        };
         this.setAddress = function (address) {
             this.address = address;
-        }
+        };
         this.setRentDay = function (rentday) {
             this.rentDay = rentday;
-        }
+        };
         this.getRentDay = function () {
             return this.rentDay;
-        }
+        };
         this.getTypeService = function () {
             return this.typeService;
-        }
+        };
         this.setTypeService = function (typeservice) {
             this.typeService = typeservice;
-        }
+        };
         this.getTypeCustomer = function () {
             return this.typeCustomer;
-        }
+        };
         this.setTypeCustomer = function (typecustomer) {
             this.typeCustomer = typecustomer;
-        }
+        };
         this.getTypeRoom = function () {
             return this.typeRoom;
-        }
+        };
         this.setTypeRoom = function (typeroom) {
             this.typeRoom = typeroom;
-        }
+        };
 
         this.total = function () {
             let discount = 0;
@@ -149,7 +149,8 @@
             + "\n2. Display Information Customer."
             + "\n3. Edit Information Customer."
             + "\n4. Delete Customer."
-            + "\n5. Exit."));
+            + "\n5. Display Total Pay of Customer."
+            + "\n6. Exit."));
         switch (choose) {
             case 1:
                 addNewCustomer();
@@ -164,6 +165,7 @@
                 deleteCustomer();
                 break;
             case 5:
+                displayTotalPay();
                 break;
             default:{
                 alert("Failed!");
@@ -179,16 +181,37 @@
             sout += (i+1)+". "+arrCustomer[i].name +"\n"
         }
         let chooseDisplay = parseInt(prompt(sout+(arrCustomer.length+1)+"."+" Quay lại màn hình chính."));
-        while (chooseDisplay != arrCustomer.length+1){
+        if (chooseDisplay <0 || chooseDisplay > arrCustomer.length || !chooseDisplay){
+            displayMainMenu();
+        }
+        while (chooseDisplay <= (arrCustomer.length+1)){
             let choose2 =parseInt(prompt("1.Họ tên: " +arrCustomer[chooseDisplay-1].name
                 + "\n2. Email: " + arrCustomer[chooseDisplay-1].email
                 + "\n3. CMND: " + arrCustomer[chooseDisplay-1].identityNumber
                 + "\n4. Ngày sinh: " +arrCustomer[chooseDisplay-1].birthday
                 + "\n5. Chọn hàng mục cần sửa"));
+            if(choose2 <0 || choose2 > arrCustomer[chooseDisplay-1].length || !choose2 || isNaN(choose2)) {
+                displayMainMenu();
+            }
             switch (choose2) {
-                case 1:
+                case 1:{
                     arrCustomer[chooseDisplay-1].name = prompt("Nhập lại tên: ");
+                    let tempname = "";
+                    for( let i = 0;i< arrCustomer[chooseDisplay-1].name.length;i++){
+                        arrCustomer[chooseDisplay-1].name =  arrCustomer[chooseDisplay-1].name.trim().toLowerCase(); // trim() để xoá khoảng trắng ở đầu và cuối chuỗi.
+                        if( arrCustomer[chooseDisplay-1].name.charAt(i) === " " &&  arrCustomer[chooseDisplay-1].name.charAt(i+1)=== " "){
+                            continue;
+                        } // nếu sau khoảng trắng lại có khoảng trắng thì sẽ ko bỏ qua, ko add vào mảng temp, sau đó chạy tiếp for.
+                        if(i==0 ||  arrCustomer[chooseDisplay-1].name.charAt(i-1) ===" "){
+                            tempname +=  arrCustomer[chooseDisplay-1].name.charAt(i).toUpperCase();
+                            continue;
+                        }
+
+                        tempname +=  arrCustomer[chooseDisplay-1].name[i];
+                    }
+                    arrCustomer[chooseDisplay-1].name =tempname;
                     break;
+                }
                 case  2:
                     arrCustomer[chooseDisplay-1].email = prompt("Nhập lại email: ");
                     break;
@@ -203,32 +226,124 @@
 
             editCustomer();
         }
-        if (chooseDisplay == arrCustomer.length+1) displayMainMenu();
+        displayMainMenu();
 
     }
 
     function addNewCustomer() {
-
+        let checkCmnd = false;
+        let checkBD = false;
+        let check = false;
+        let checkRentDays = false;
         let name = prompt('Tên');
-        let cmnd = prompt('CMND');
-        let birthday = prompt('Ngày sinh:')
-        let email = prompt('Email');
+        let tempname = "";
+        for( let i = 0;i<name.length;i++){
+            name = name.trim().toLowerCase(); // trim() để xoá khoảng trắng ở đầu và cuối chuỗi.
+            if(name.charAt(i) === " " && name.charAt(i+1)=== " "){
+                continue;
+            } // nếu sau khoảng trắng lại có khoảng trắng thì sẽ ko bỏ qua, ko add vào mảng temp, sau đó chạy tiếp for.
+            if(i==0 || name.charAt(i-1) ===" "){
+                tempname += name.charAt(i).toUpperCase();
+                continue;
+            }
+
+            tempname += name[i];
+        }
+        name =tempname;
+        let cmnd;
+        do{
+            cmnd = prompt('CMND');
+            if(!isNaN(cmnd)){
+                cmnd = Number.parseFloat(cmnd);
+            }
+            if(!Number.isInteger(cmnd)){
+                alert("Nhập sai định dạng");
+                continue;
+            }
+            if(cmnd<10000000 || cmnd>99999999){
+                alert("Không đúng định dạng");
+                continue;
+            }
+            checkCmnd = true;
+
+        }while (!checkCmnd);
+        let birthday;
+        do{
+             birthday = prompt('Ngày sinh (mm/dd/yyyy):');
+            if(birthday.charAt(2) === "/" && birthday.charAt(5) === "/"){
+                let day = birthday.substring(3,5);
+                let month = birthday.substring(0,2);
+                let year = birthday.substring(6,10);
+                if(!isNaN(day) && !isNaN(month) && !isNaN(year)){
+                    day = Number.parseFloat(day);
+                    month = Number.parseFloat(month);
+                    year = Number.parseFloat(year);
+                    if(Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)){
+                        if((day>0 && day<32)&& (month >0 && month <13) && (year>1950)){
+                            checkBD = true;
+                        }
+                    }
+                }
+            }
+
+        }while (!checkBD);
+        let email;
+        do {
+            countArt =0;
+            countDoc = 0;
+            email = prompt('Email');
+            for(let i = 0; i <email.length;i++){
+                if(email.charAt(i)=="@"){
+                    countArt++;
+                    for(let j= i+1;j<email.length;j++){
+                        if(email.charAt(j)== "."){
+                            countDoc++;
+                        }
+                    }
+                }
+            }
+            if(countArt!= 1 || countDoc !=1){
+                alert("Nhập sai định dạng")
+            } else check = true;
+        }while (!check);
+
         let address = prompt("Địa chỉ: ");
-        let rentday = prompt("Số ngày thuê: ");
-        let typeservice = prompt("Bảng giá: "+
-            "\n - Villa: 500$/1 ngày "+
-            "\n - House: 300$/1 ngày"+
-            "\n - Room: 100$/ 1 ngày");
-        let typecustomer = prompt("Chọn Customer:" +
-            "\n Diamond" +
-            "\n Platinum"+
-            "\n Gold"+
-            "\n Silver" +
-            "\n Member");
-        let typeroom = prompt("Bảng giá: "+
-            "\n - Vip"+
-            "\n - Business"+
-            "\n - Normal");
+        let rentday;
+        do{
+            rentday = prompt("Số ngày thuê: ");
+            if(!isNaN(rentday)){
+                rentday = parseInt(rentday);
+                if(rentday >0 && Number.isInteger(rentday)){
+                    checkRentDays = true;
+                    continue;
+                }
+            }
+            alert("Số ngày thuê phải là nguyên dương");
+        } while (!checkRentDays);
+
+        let typeservice;
+        do {
+            typeservice = prompt("Bảng giá: " +
+                "\n - Villa: 500$/1 ngày " +
+                "\n - House: 300$/1 ngày" +
+                "\n - Room: 100$/ 1 ngày");
+        }while (typeservice != "Villa" && typeservice != "House" && typeservice != "Room");
+        let typecustomer;
+        do{
+            typecustomer = prompt("Chọn Customer:" +
+                "\n- Diamond" +
+                "\n- Platinum"+
+                "\n- Gold"+
+                "\n- Silver" +
+                "\n- Member");
+        }while (typecustomer != "Diamond" && typecustomer != "Platinum" && typecustomer != "Gold" && typecustomer != "Silver" && typecustomer != "Member");
+        let typeroom;
+        do{
+            typeroom = prompt("Hạng Phòng: "+
+                "\n - Vip"+
+                "\n - Business"+
+                "\n - Normal");
+        }while (typeroom != "Vip" && typeroom != "Business"&& typeroom != "Normal");
         let cusInfor = new Customer(name,birthday,cmnd,email,address,rentday,typeservice,typecustomer,typeroom);
 
         arrCustomer.push(cusInfor);
@@ -241,6 +356,9 @@
             sout += (i+1)+". "+arrCustomer[i].name +"\n"
         }
         let temp = parseInt(prompt(sout+(arrCustomer.length+1)+"."+" Quay lại màn hình chính."));
+        if(temp <0 || temp > arrCustomer.length || !temp){
+            displayMainMenu();
+        } // Nếu temp trả về giá trị không nằm trong từ 0 đến arr.length, nó sẽ ko thể thực hiện alert ->sai.
         alert("Họ tên: " +arrCustomer[temp-1].name
             + "\nNgày sinh: " + arrCustomer[temp-1].birthday
             + "\nCMND: " + arrCustomer[temp-1].identityNumber
@@ -261,19 +379,22 @@
         let chooseDelete = parseInt(prompt(sout+(arrCustomer.length+1)+"."+" Chọn vị trí muốn xoá."));
         let check = prompt("Are you sure!?"
                             +"\n1. Yes"
-                            +"\2. No");
+                            +"\n2. No");
         if (check == 1){
             arrCustomer.splice(chooseDelete-1,1);
         }
         else deleteCustomer();
         displayMainMenu();
     }
-
-
-
-
-
-
+    
+    function displayTotalPay() {
+        let sout = "";
+        for (let i = 0 ; i<arrCustomer.length;i++){
+            sout += (i+1)+". Khách hàng "+arrCustomer[i].name+" có số tiền thuê là: "+arrCustomer[i].total().toFixed(2) +"$\n"
+        }
+        alert(sout)
+        displayMainMenu();
+    }
 </script>
 </body>
 </html>

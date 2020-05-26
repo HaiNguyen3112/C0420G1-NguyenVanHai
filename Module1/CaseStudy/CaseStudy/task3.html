@@ -13,7 +13,7 @@
     let name = prompt('Tên');
     let tempname = "";
     for( let i = 0;i<name.length;i++){
-        name = name.trim().toLowerCase();
+        name = name.trim().toLowerCase(); // trim() để xoá khoảng trắng ở đầu và cuối chuỗi.
         if(name.charAt(i) === " " && name.charAt(i+1)=== " "){
             continue;
         }
@@ -25,9 +25,9 @@
         tempname += name[i];
     }
     name =tempname;
-
+    let cmnd;
     do{
-        let cmnd = prompt('CMND');
+        cmnd = prompt('CMND');
         if(!isNaN(cmnd)){
             cmnd = Number.parseFloat(cmnd);
         }
@@ -41,17 +41,17 @@
         }
         checkCmnd = true;
 
-    }while (checkCmnd);
+    }while (!checkCmnd);
 
     let birthday;
     let a = true;
 
     do{
         birthday = prompt('Ngày sinh (mm/dd/yyyy):');
-        if(birthday.charAt(3) === "/" && birthday.charAt(5) === "/"){
-            let day = birthday.substring(4,5);
-            let month = birthday.substring(0,1);
-            let year = birthday.substring(6,9);
+        if(birthday.charAt(2) === "/" && birthday.charAt(5) === "/"){
+            let day = birthday.substring(3,5);
+            let month = birthday.substring(0,2);
+            let year = birthday.substring(6,10);
             if(!isNaN(day) && !isNaN(month) && !isNaN(year)){
                 day = Number.parseFloat(day);
                 month = Number.parseFloat(month);
@@ -64,12 +64,12 @@
             }
         }
 
-    }while (checkBD);
-
+    }while (!checkBD);
+    let email;
     do {
         countArt =0;
         countDoc = 0;
-        let email = prompt('Email');
+        email = prompt('Email');
         for(let i = 0; i <email.length;i++){
             if(email.charAt(i)=="@"){
                 countArt++;
@@ -83,21 +83,23 @@
         if(countArt!= 1 || countDoc !=1){
             alert("Nhập sai định dạng")
         } else check = true;
-    }while (check);
+    }while (!check);
 
     let address = prompt('Địa chỉ:');
-
+    checkRentDays = false;
+    let rentDays;
     do {
-        checkRentDays = false;
-        let rentDays = parseInt(prompt("Số ngày thuê:"));
-        if(!isNaN(checkRentDays)){
-            rentDays = Number.parseFloat(rentDays);
+
+        rentDays = parseInt(prompt("Số ngày thuê:"));
+        if(!isNaN(rentDays)){
+            rentDays = parseFloat(rentDays);
             if( Number.isInteger(rentDays) && rentDays >0){
                 checkRentDays = true;
+                continue;
             }
         }
         alert("Số nhập vào phải là nguyên dương");
-    } while (checkRentDays)
+    } while (!checkRentDays)
 
     let typeCustomer = prompt("Chọn Customer:" +
         "\n Diamond" +
@@ -129,8 +131,8 @@
     switch (choose1) {
         case 1:
             prompt("Họ tên: " +name
-                + "\nEmail: " + email
-                + "\nCMND: " + cmnd
+                + "\nEmail: " +email
+                + "\nCMND: " +cmnd
                 + "\nSố ngày thuê: " +rentDays
                 + "\nLoại phòng: " +typeService
                 + "\nHạng khách: " +typeCustomer);
@@ -138,8 +140,8 @@
         case 2:
         {
             let choose2 =parseInt(prompt("1.Họ tên: " +name
-                + "\n2. Email: " + email
-                + "\n3. CMND: " + cmnd
+                + "\n2. Email: " +email
+                + "\n3. CMND: " +cmnd
                 + "\n4. Số ngày thuê: " +rentDays
                 + "\n5. Loại phòng: " +typeService
                 + "\n6. Hạng khách: " +typeCustomer
