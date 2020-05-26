@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let arrNameCustomer = [];
+    let checkarr = true;
+    while (checkarr) {
+        let choose = parseFloat(prompt("Nhập thao tác muốn thực hiện: "
+            + "\n 1. Thêm người dùng."
+            + "\n 2. Xoá người dùng."))
+        switch (choose) {
+            case 1: {
+                let count = parseFloat(prompt("Nhập số người muốn thêm"));
+                for (let i = 0; i < count; i++) {
+                    let tempname = prompt("Nhập tên người thứ " + 1);
+                    arrNameCustomer.push(tempname);
+                }
+                arrNameCustomer.sort();
+                // arrNameCustomer.reverse(); sắp xếp theo alpha. sau đó đảo ngược mảng -> sắp xếp ngược alpha
+                let sout = "";
+                for (let i = 0; i < count; i++) {
+                    sout += (i + 1) + ". " + arrNameCustomer[i]+"\n";
+                }
+                alert(sout);
+                break;
+            }
+            case 2:{
+                let check = false;
+                let tempname = prompt("Nhập tên cần xoá: ");
+                for (let i = 0;i <arrNameCustomer.length;i++){
+                    if(arrNameCustomer[i] === tempname){
+                        arrNameCustomer.splice(i,1); // xoá từ phần tử thứ i, xoá 1 phần tử.
+                        check = true;
+                    }
+                }
+                if(!choose){
+                    alert("Không tìm thấy trong danh sách");
+                }
+                let sout = "";
+                for (let i = 0; i < arrNameCustomer.length; i++) {
+                    sout += (i + 1) + ". " + arrNameCustomer[i]+"\n";
+                }
+                alert(sout);
+                break;
+            }
+            default: {
+                alert("Done");
+                checkarr = false;
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>
