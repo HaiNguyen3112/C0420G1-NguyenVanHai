@@ -212,9 +212,28 @@
                     arrCustomer[chooseDisplay-1].name =tempname;
                     break;
                 }
-                case  2:
-                    arrCustomer[chooseDisplay-1].email = prompt("Nhập lại email: ");
+                case  2:{
+                    do {
+                        check = false;
+                        let countArt =0;
+                        let countDoc = 0;
+                        arrCustomer[chooseDisplay-1].email = prompt('Email');
+                        for(let i = 0; i <arrCustomer[chooseDisplay-1].email.length;i++){
+                            if(arrCustomer[chooseDisplay-1].email.charAt(i)=="@"){
+                                countArt++;
+                                for(let j= i+1;j<arrCustomer[chooseDisplay-1].email.length;j++){
+                                    if(arrCustomer[chooseDisplay-1].email.charAt(j)== "."){
+                                        countDoc++;
+                                    }
+                                }
+                            }
+                        }
+                        if(countArt!= 1 || countDoc !=1){
+                            alert("Nhập sai định dạng")
+                        } else check = true;
+                    }while (!check);
                     break;
+                }
                 case  3:
                     arrCustomer[chooseDisplay-1].identityNumber = prompt("Nhập lại CMND: ");
                     break;
@@ -233,7 +252,7 @@
     function addNewCustomer() {
         let checkCmnd = false;
         let checkBD = false;
-        let check = false;
+        var check = false;
         let checkRentDays = false;
         let name = prompt('Tên');
         let tempname = "";
@@ -289,8 +308,8 @@
         }while (!checkBD);
         let email;
         do {
-            countArt =0;
-            countDoc = 0;
+            let countArt =0;
+            let countDoc = 0;
             email = prompt('Email');
             for(let i = 0; i <email.length;i++){
                 if(email.charAt(i)=="@"){

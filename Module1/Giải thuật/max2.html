@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let max;
+    let max2;
+    let index;
+    let index1;
+    let a=[1,4,7,9,47,9,5,8,3,7];
+    // let num = parseInt(prompt("Nhập số phần tử"));
+    // for (let i = 0;i<num;i++){
+    //     a[i]=Math.round(Math.random()*50);
+    // }
+    alert(a);
+    max = a[0];
+    for (let i = 1;i<a.length;i++){
+        if (max<a[i]){
+            max = a[i];
+            index1 = i;
+        }
+    }
+    let temp = a;
+    max2 = temp[0];
+    temp.splice(index1,1);
+    alert(temp);
+    // Tìm phần tử lớn thứ 2 đầu tiên:
+    // for (let i = 1;i<temp.length;i++){
+    //     if (max2 <temp[i]){
+    //         max2 = temp[i];
+    //         if(i>=index1){
+    //             index = i+1;
+    //         } else index = i;
+    //
+    //     }
+    // }
+    // alert("Dãy: "+a+"\n Phần từ lớn nhất là: "+max+"\n Phần tử lớn thứ 2 là: "+max2+" tại vị trí: "+index);
+
+    // Tìm phần tử lớn thứ 2 thứ 2:
+
+    for (let i = 1;i<temp.length;i++){
+        if (max2 <temp[i]){
+            max2 = temp[i];
+            if(i>=index1){
+                index = i+1;
+            } else index = i;
+
+        }
+    }
+    let count =0;
+    for (let i = index+1;i<a.length;i++){
+            if(a[i]==max2){
+                count++;
+                if(i>=index1){
+                    index = i+1;
+                } else index = i;
+                break;
+            }
+    }
+    if (count == 0) {
+        alert("Không tìm thấy số lớn thứ nhì thứ 2 trong dãy");
+    } else {
+        alert("Dãy: "+a+"\n Phần từ lớn nhất là: "+max+"\n Phần tử lớn thứ 2 thứ 2 là: "+max2+" tại vị trí: "+index);
+    }
+
+
+</script>
+</body>
+</html>
