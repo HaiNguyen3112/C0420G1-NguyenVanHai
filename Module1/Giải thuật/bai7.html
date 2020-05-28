@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let num =(prompt("Nhập: "));
+    let sum =0;
+    let multi =1;
+    for (let i = 0;i<num.length;i++){
+        sum += parseInt(num.substring(i,i+1));
+        multi *= parseInt(num.substring(i,i+1));
+    }
+    alert("Số "+num+" có tổng là: "+sum+", tích là: "+multi);
+
+</script>
+</body>
+</html>

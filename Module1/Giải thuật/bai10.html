@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="show"></p>
+<p id="show1"></p>
+<p id="show2"></p>
+<script>
+
+    let str = "";
+    let temp = "";
+    str = prompt("Nhập chuỗi: ");
+    for (let i = 0 ; i < str.length ; i++){
+        temp += str[i]+"<br>";
+    }
+    document.getElementById("show").innerHTML = temp;
+
+    let tempstr =[];
+    for (let i = 0; i<str.length;i++){
+        tempstr[i] = str[i];
+    }
+    for (let i = 0 ;i<tempstr.length;i++){
+        for (let j = i+1;j<tempstr.length;j++){
+            if (tempstr[i] === tempstr[j]){
+                tempstr.splice(j,1);
+                j--;
+            }
+        }
+    }
+    sout = "Số kí tự có trong chuỗi là: "+tempstr.length;
+    document.getElementById("show1").innerHTML = sout;
+
+    let sout1 = "";
+
+    for (let i = 0 ;i < tempstr.length;i++){
+    sout1 += "Từ "+tempstr[i]+ " xuất hiện "+findAppear(tempstr[i],str)+"<br>";
+
+    }
+    document.getElementById("show2").innerHTML = sout1;
+
+    function findAppear(a,str) {
+        let count = 0;
+        for (let i = 0;i<str.length;i++){
+            if(a == str[i]){
+                count ++;
+            }
+        }
+        return count;
+    }
+
+
+
+</script>
+
+</body>
+</html>

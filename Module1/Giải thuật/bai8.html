@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+let a = parseInt(prompt("Nhập số thứ nhất: "));
+let b = parseInt(prompt("Nhập số thứ hai: "));
+alert("UCLN của "+a+" và "+b+" là: "+findUcln(a,b) +"\n"
+        +"BCNN của "+a+" và "+b+" là: "+findbcnn(a,b));
+
+
+
+function findUcln(a,b) {
+    let temp;
+    if(a>b){
+        for (let i = 1;i<=b;i++){
+            if(a%i==0 && b%i ==0){
+                temp = i;
+            }
+        }
+    } else {
+        for (let i = 1;i<=a;i++){
+            if(a%i==0 && b%i ==0){
+                temp = i;
+            }
+        }
+    }
+    return temp;
+}
+
+function findbcnn(a,b) {
+    let bcnn;
+    let temp1 = [];
+    let temp2 = [];
+    for (let i = 1; i<=b;i++){
+        temp1[i-1] = a*i;
+    }
+    for (let i = 1; i<=a;i++){
+        temp2[i-1]= b*i;
+    }
+    for (let i = 0;i<temp1.length;i++){
+        for (let j= 0;j<temp2.length;j++){
+            if(temp1[i] == temp2[j]){
+                bcnn = temp1[i];
+                break;
+            }
+        }
+        if (bcnn) {
+            break;
+        }
+    }
+    return bcnn;
+
+}
+
+</script>
+</body>
+</html>
