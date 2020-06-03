@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let arr = new Array();
+    let num;
+    do {
+        num = parseInt(prompt("Nhập vào số phần tử (>6): "));
+
+    }while (num<=6 || isNaN(num));
+    for (let i = 0; i< num ; i++){
+        arr[i] = prompt("Nhập phần tử thứ "+(i+1)+": ");
+        if (!isNaN(arr[i])){
+            arr[i] = parseInt(arr[i])
+        }
+    }
+    alert("Mảng trước khi sắp xếp: " +arr);
+    for (let i = 0; i< arr.length;i++){
+        for (let j = i ; j<arr.length;j++){
+            if (arr[i]>arr[j]){
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    alert("Mảng sau sắp xếp là: "+arr);
+
+</script>
+</body>
+</html>

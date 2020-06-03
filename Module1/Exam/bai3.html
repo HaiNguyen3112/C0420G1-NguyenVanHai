@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let email;
+    do{
+        email = prompt("Enter Email: ");
+    } while (!checkEmail(email));
+
+    alert("Hello "+getName(email));
+
+
+    function getName(email) {
+        let temp = "";
+        for (let i = 0;i<email.length;i++){
+            if (email.charAt(i)!= "@"){
+                temp += email.charAt(i);
+            } else {
+                break;
+            }
+        }
+        return temp;
+    }
+
+    function checkEmail(email){
+        let countArt =0;
+        let countDoc = 0;
+        for(let i = 0; i <email.length;i++){
+            if(email.charAt(i)=="@"){
+                countArt++;
+                for(let j= i+1;j<email.length;j++){
+                    if(email.charAt(j)== "."){
+                        countDoc++;
+                    }
+                }
+            }
+        }
+        if(countArt!= 1 || countDoc !=1){
+            return false;
+        }
+        return true;
+    }
+
+
+</script>
+</body>
+</html>

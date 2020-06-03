@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Employee{
+        constructor(userName,name,password,birthday, identityNumber,sex,address,phoneNumber) {
+            this.userName = userName;
+            this.name = name;
+            this.password = password;
+            this.birthday = birthday;
+            this.identityNumber = identityNumber;
+            this.sex = sex;
+            this.address = address;
+            this.phoneNumber = phoneNumber;
+        }
+        setUserName (userName){
+            this.userName = userName;
+        }
+        getUserName (){
+            return this.userName;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getName(){
+            return this.name;
+        }
+        setPassword(password){
+            this.password = password;
+        }
+        getPassword(){
+            return this.password;
+        }
+        setBirthday (birthday){
+            this.birthday = birthday;
+        }
+        getBirthday(){
+            return this.birthday;
+        }
+        setIdentityNumber(idetityNumber){
+            this.identityNumber = idetityNumber;
+        }
+        getIdentityNumber(){
+            return this.identityNumber;
+        }
+        setSex(sex){
+            this.sex = sex;
+        }
+        getSex(){
+            return this.sex;
+        }
+        setAddress(address){
+            this.address = address;
+        }
+        getAddress(){
+            return this.address;
+        }
+        setPhoneNumber(phoneNumber){
+            this.phoneNumber = phoneNumber;
+        }
+        getPhoneNumber(){
+            return this.phoneNumber;
+        }
+    }
+
+    let arrEmployee = [];
+    displayMainMenu();
+    function displayMainMenu() {
+        let choose = parseFloat(prompt("1. Add New Employee."
+            + "\n2. Display Information Employee."
+            + "\n3. Login."
+            + "\n4. Exit."));
+        switch (choose) {
+            case 1:
+                addNewEmployee();
+                break;
+            case 2:
+                displayEmployee();
+                break;
+            case 3:
+                login();
+                break;
+            default: {
+                alert("Failed!");
+            }
+        }
+    }
+
+    function addNewEmployee() {
+        let name = prompt('Nhập tên: ');
+        let tempname = "";
+        for( let i = 0;i<name.length;i++){
+            name = name.trim().toLowerCase();
+            if(name.charAt(i) === " " && name.charAt(i+1)=== " "){
+                continue;
+            }
+            if(i==0 || name.charAt(i-1) ===" "){
+                tempname += name.charAt(i).toUpperCase();
+                continue;
+            }
+
+            tempname += name[i];
+        }
+        name = tempname;
+        let userName = prompt("Nhập tên đăng nhập: ");
+        let passWord = prompt("Nhập PassWord: ");
+        let birthday;
+        let checkBD = false;
+        do{
+            birthday = prompt('Ngày sinh (dd/mm/yyyy):');
+            if(birthday.charAt(2) === "/" && birthday.charAt(5) === "/"){
+                let month = birthday.substring(3,5);
+                let day = birthday.substring(0,2);
+                let year = birthday.substring(6,10);
+                if(!isNaN(day) && !isNaN(month) && !isNaN(year)){
+                    day = Number.parseFloat(day);
+                    month = Number.parseFloat(month);
+                    year = Number.parseFloat(year);
+                    if(Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)){
+                        if((day>0 && day<32)&& (month >0 && month <13) && (year>1950)){
+                            checkBD = true;
+                        }
+                    }
+                }
+            }
+
+        }while (!checkBD);
+        let identityNumber;
+        let checkIden = false;
+        do {
+            identityNumber = prompt("Nhập CMND: ");
+            if(!isNaN(identityNumber)){
+                identityNumber = Number.parseFloat(identityNumber);
+            }
+            if(!Number.isInteger(identityNumber)){
+                alert("Nhập sai định dạng");
+                continue;
+            }
+            if(identityNumber<10000000 || identityNumber>99999999){
+                alert("Không đúng định dạng");
+                continue;
+            }
+            checkIden = true;
+        } while (!checkIden);
+        let sex;
+        do {
+            sex = prompt("Nhập giới tính (Nam/Nữ): ");
+        }while (sex != "Nam" && sex != "Nữ");
+        let address = prompt("Nhập địa chỉ: ");
+        let phoneNumber  = prompt("Nhập SĐT: ");
+
+        let employeeInfor = new Employee(userName,name,passWord,birthday,identityNumber,sex,address,phoneNumber);
+        arrEmployee.push(employeeInfor);
+        displayMainMenu();
+    }
+    function displayEmployee() {
+        let sout = "";
+        for (let i = 0 ; i<arrEmployee.length;i++){
+            sout += (i+1)+". "+arrEmployee[i].name +"\n"
+        }
+        let temp = parseInt(prompt(sout+(arrEmployee.length+1)+"."+" Quay lại màn hình chính."));
+        if(temp <0 || temp > arrEmployee.length || !temp){
+            displayMainMenu();
+        } // Nếu temp trả về giá trị không nằm trong từ 0 đến arr.length, nó sẽ ko thể thực hiện alert ->sai.
+        alert("Họ tên: " +arrEmployee[temp-1].name
+            + "\nNgày sinh: " + arrEmployee[temp-1].birthday
+            + "\nCMND: " + arrEmployee[temp-1].identityNumber
+            + "\nĐịa chỉ: " +arrEmployee[temp-1].address
+            + "\nPhone Number: " +arrEmployee[temp-1].phoneNumber
+            + "\nUser Name: " +arrEmployee[temp-1].userName
+            + "\nPass Word: " +arrEmployee[temp-1].password
+            + "\nGiới tính: " +arrEmployee[temp-1].sex);
+        displayMainMenu();
+    }
+    function login() {
+        let checkLogin = false;
+        let i;
+        do{
+            let tempUser = prompt("Username: ");
+            let temppass = prompt("Password: ");
+            for (i = 0; i<arrEmployee.length; i++){
+                if (tempUser == arrEmployee[i].userName && temppass == arrEmployee[i].password){
+                    checkLogin = true;
+                    break;
+                }
+            }
+            if (!checkLogin) {
+                alert("Sai Username hoặc Password."
+                +"\nNhập lại: ")
+            }
+        }while (!checkLogin);
+
+        if (checkLogin){
+            alert("Đăng nhập thành công!!!")
+        }
+        displayMainMenu();
+    }
+</script>
+</body>
+</html>

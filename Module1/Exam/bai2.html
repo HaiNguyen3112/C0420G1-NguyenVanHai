@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number;
+    do {
+        number = parseInt(prompt("Nhập 1 số có 4 chữ số: "));
+    } while (number<1000 || number >9999 || isNaN(number));
+
+    function isNumber(number) {
+        number = number.toString();
+        let a = parseInt(number.substring(0,1));
+        let b = parseInt(number.substring(1,2));
+        let c = parseInt(number.substring(2,3));
+        let d = parseInt(number.substring(3,4));
+        let ab = a+b;
+        let cd = c-d;
+
+
+        if (ab == cd){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (isNumber(number)){
+        alert("True");
+    } else {
+        alert("False");
+    }
+
+
+
+</script>
+</body>
+</html>
