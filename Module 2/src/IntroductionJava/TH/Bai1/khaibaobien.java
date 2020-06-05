@@ -1,4 +1,4 @@
-package IntroductionJava.TH;
+package IntroductionJava.TH.Bai1;
 
 public class khaibaobien {
     public static void main(String[] args) {

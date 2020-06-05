@@ -1,4 +1,4 @@
-package IntroductionJava.TH;
+package IntroductionJava.TH.Bai1;
 
 import java.util.Scanner;
 

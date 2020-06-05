@@ -1,4 +1,4 @@
-package IntroductionJava.BàiTap;
+package IntroductionJava.BàiTap.Bai1;
 
 import com.sun.org.apache.bcel.internal.classfile.Constant;
 

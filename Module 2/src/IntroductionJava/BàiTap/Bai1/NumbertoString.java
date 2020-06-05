@@ -1,4 +1,4 @@
-package IntroductionJava.BàiTap;
+package IntroductionJava.BàiTap.Bai1;
 
 import java.util.Scanner;
 
