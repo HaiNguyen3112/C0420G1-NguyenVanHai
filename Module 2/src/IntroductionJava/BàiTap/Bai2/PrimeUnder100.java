@@ -16,4 +16,6 @@ public class PrimeUnder100 {
         }
         System.out.printf("%s",text);
     }
+
 }
+
