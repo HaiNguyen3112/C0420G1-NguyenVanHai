@@ -14,7 +14,7 @@ public class TotalXArray {
 
         for (int i = 0;i<arr.length;i++){
             for (int j =0;j<arr[i].length;j++){
-                arr[i][j] = (int) Math.round(Math.random()*10+1);
+                arr[i][j] = (int) Math.round(Math.random()*5+1);
             }
         }
 
@@ -30,7 +30,9 @@ public class TotalXArray {
         int total = 0;
         for (int i = 0;i<arr.length;i++){
             for (int j =0;j<arr[i].length;j++){
-                if (j == i || (j+i == arr.length -1)){
+                if (j == i && (j+i == arr.length-1)){
+                    total += (arr[i][j]*2);
+                }else if (j == i || (j+i == arr.length -1)){
                     total += arr[i][j];
                 }
             }
