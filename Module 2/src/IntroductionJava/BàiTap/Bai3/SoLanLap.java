@@ -9,11 +9,11 @@ public class SoLanLap {
         System.out.printf("Enter the String: ");
         str = sc.nextLine();
         System.out.printf("Enter the chart: ");
-        String c = sc.nextLine();
+        char c = sc.nextLine().charAt(0);
 
         int count =0;
         for (int i= 0;i<str.length();i++){
-            if (c.equals(str.charAt(i))){
+            if (c == str.charAt(i)){
                 count ++;
             }
         }
