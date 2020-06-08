@@ -36,6 +36,7 @@ class Main {
         System.out.println(rec.disPlay());
         System.out.println("Area is: "+rec.getArea());
         System.out.println("Perimeter is: "+rec.getPerimeter());
+
     }
 }
 
