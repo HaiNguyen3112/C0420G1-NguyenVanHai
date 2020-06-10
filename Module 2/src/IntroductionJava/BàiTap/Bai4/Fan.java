@@ -1,8 +1,6 @@
 package IntroductionJava.BàiTap.Bai4;
 
 
-import com.sun.org.apache.bcel.internal.generic.FASTORE;
-
 public class Fan {
     final int SLOW  = 1;
     final int MEDIUM  = 2;
@@ -23,6 +21,7 @@ public class Fan {
         this.radius = radius;
         this.color = color;
     }
+
 
     public void setColor(String color) {
         this.color = color;
@@ -62,10 +61,21 @@ public class Fan {
         } else return "Speed: "+this.speed+" Color: "+this.color+" Radius: "+this.radius+" Fan is off";
     }
 
+    public static String abc(){
+        return "abc";
+    }
+
+    public String dspABC() {
+        return ABC;
+    }
+
+    public static String ABC ="hello";
+
     public static void main(String[] args) {
+
         Fan a = new Fan(3,true,10,"yellow");
         Fan b = new Fan(2,false,5,"blue");
-
+        System.out.println(Fan.abc());
         System.out.println(a.toString());
         System.out.println(b.toString());
     }
