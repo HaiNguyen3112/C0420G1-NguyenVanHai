@@ -1,13 +1,13 @@
 package IntroductionJava.BàiTap.Bai6;
 
-public class TwoD {
+public class Point {
     private float x = 0.0f;
     private float y = 0.0f;
 
-    public TwoD() {
+    public Point() {
     }
 
-    public TwoD(float x, float y) {
+    public Point(float x, float y) {
         this.x = x;
         this.y = y;
     }
@@ -41,10 +41,9 @@ public class TwoD {
         return "Point2D has ("+getX()+", "+getY()+")";
     }
 }
-
-class Test2D{
+class TestPoint{
     public static void main(String[] args) {
-        TwoD temp = new TwoD(5.666f,4.33223f);
+        Point temp = new Point(5.666f,4.33223f);
         System.out.println(temp.toString());
     }
 }
