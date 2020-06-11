@@ -1,4 +1,4 @@
-package IntroductionJava.BàiTap.Bai6;
+package IntroductionJava.TH.Bai6;
 
 public class Shape{
     private String color = "green";
