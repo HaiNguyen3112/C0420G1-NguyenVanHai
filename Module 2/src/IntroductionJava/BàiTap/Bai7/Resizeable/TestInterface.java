@@ -32,35 +32,11 @@ public class TestInterface {
         double percent = (double) Math.round(Math.random()*100+1);
         System.out.println("Before Resize: ");
 
-        
+
 
         for (Shape shape : shapes){
-            if (shape instanceof Circle){
-                Circle circle1 = (Circle) shapes[0];
-                System.out.println("Circle: "+
-                        "\nRadius: "+ circle1.getRadius()
-                        +"\nArea: "+circle1.getArea()
-                        +"\nPerimrter: "+circle1.getPerimeter());
-            }
-            if (shape instanceof Square){
-                Square square = (Square) shape;
-                System.out.println("Square: "
-                        +"\nSide: "+square.getSide()
-                        +"\nArea: "+square.getArea()
-                        +"\nPerimeter: "+square.getPerimeter());
-            } else if (shape instanceof Rectangle){
-                Rectangle rectangle =(Rectangle) shape;
-                System.out.println("Rectangle: "
-                                    +"\nLength: "+rectangle.getLength()
-                                    +"\nWidth: "+rectangle.getWidth()
-                                    +"\nArea: "+rectangle.getArea()
-                                    +"\nPerimeter: "+rectangle.getPerimeter());
-            }
-
+            System.out.println(shape);
         }
-
-
-
 
         for (Shape shape:shapes){
             if (shape instanceof Circle){
@@ -77,34 +53,9 @@ public class TestInterface {
             }
         }
 
-
-
-
-
         System.out.println("After resize with percent: "+percent);
         for (Shape shape : shapes){
-            if (shape instanceof Circle){
-                Circle circle1 = (Circle) shapes[0];
-                System.out.println("Circle: "+
-                        "\nRadius: "+ circle1.getRadius()
-                        +"\nArea: "+circle1.getArea()
-                        +"\nPerimrter: "+circle1.getPerimeter());
-            }
-            if (shape instanceof Square){
-                Square square = (Square) shape;
-                System.out.println("Square: "
-                        +"\nSide: "+square.getSide()
-                        +"\nArea: "+square.getArea()
-                        +"\nPerimeter: "+square.getPerimeter());
-            } else if (shape instanceof Rectangle){
-                Rectangle rectangle =(Rectangle) shape;
-                System.out.println("Rectangle: "
-                        +"\nLength: "+rectangle.getLength()
-                        +"\nWidth: "+rectangle.getWidth()
-                        +"\nArea: "+rectangle.getArea()
-                        +"\nPerimeter: "+rectangle.getPerimeter());
-            }
-
+            System.out.println(shape);
         }
 
     }
