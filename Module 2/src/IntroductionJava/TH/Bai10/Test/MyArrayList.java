@@ -23,7 +23,8 @@ public class MyArrayList <E> extends MyAbstractList <E> {
     public void add(int index, E e) {
         ensureCapacity();
 // Move the elements to the right after the specified index
-        for (int i = size - 1; i >= index; i--) data[i + 1] = data[i];
+        for (int i = size - 1; i >= index; i--)
+            data[i + 1] = data[i];
 // Insert new element to data[index]
         data[index] = e;
 // Increase size by 1
