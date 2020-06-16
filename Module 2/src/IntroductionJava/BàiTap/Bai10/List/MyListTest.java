@@ -1,8 +1,10 @@
-package IntroductionJava.BàiTap.Bai10;
+package IntroductionJava.BàiTap.Bai10.List;
+
+import IntroductionJava.BàiTap.Bai10.List.MyList;
 
 public class MyListTest {
     public static void main(String[] args) {
-        MyList <Integer> ML = new MyList<Integer>();
+        MyList<Integer> ML = new MyList<Integer>();
         ML.add(0,((int)Math.round(Math.random()*10+1)));
         ML.add(1,((int)Math.round(Math.random()*10+1)));
         ML.add(2,((int)Math.round(Math.random()*10+1)));

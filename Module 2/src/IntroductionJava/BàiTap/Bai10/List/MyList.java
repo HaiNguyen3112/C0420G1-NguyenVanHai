@@ -1,4 +1,4 @@
-package IntroductionJava.BàiTap.Bai10;
+package IntroductionJava.BàiTap.Bai10.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
