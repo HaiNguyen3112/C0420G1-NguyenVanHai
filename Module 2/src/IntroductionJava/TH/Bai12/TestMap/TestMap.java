@@ -17,11 +17,7 @@ public class TestMap {
             System.out.println("Key: "+str+" Value: "+hashMap.get(str));
         }
 
-        Map<String, Integer> treeMap = new TreeMap<>();
-        treeMap.put("Hải",26);
-        treeMap.put("Đăng",27);
-        treeMap.put("Hùng",25);
-        treeMap.put("Hiệp",30);
+        Map<String, Integer> treeMap = new TreeMap<>(hashMap);
         System.out.println("Display entry in TreeMap (key->>>): ");
         for (String str : treeMap.keySet()){
             System.out.println("Key: "+str+",Value: "+treeMap.get(str));
