@@ -43,11 +43,10 @@ public class Queue {
     }
     public void print(){
         Node temp = this.front;
-        while (temp.link != front){
+        do {
             System.out.println(temp.data);
             temp = temp.link;
-        }
-        System.out.println(temp.data);
+        } while (temp.link != front.link);
 
     }
 
