@@ -1,4 +1,4 @@
-package IntroductionJava.TH.Bai13.OptinalAlgorithmComplexityTest;
+package IntroductionJava.TH.Bai13;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
