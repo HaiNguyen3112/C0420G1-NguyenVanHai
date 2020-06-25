@@ -5,12 +5,16 @@ import IntroductionJava.BàiTap.Bai10.List.MyList;
 public class MyListTest {
     public static void main(String[] args) {
         MyList<Integer> ML = new MyList<Integer>();
-        ML.add(0,((int)Math.round(Math.random()*10+1)));
-        ML.add(1,((int)Math.round(Math.random()*10+1)));
-        ML.add(2,((int)Math.round(Math.random()*10+1)));
-        ML.add(3,((int)Math.round(Math.random()*10+1)));
+        ML.add(0,1);
+        ML.add(1,2);
+        ML.add(2,3);
+        ML.add(3,4);
         ML.add(4,11);
 
+
+        ML.show();
+        ML.add(2,60);
+        System.out.println("-----------");
         ML.show();
 //        ML.remove(1);
 //        ML.show();

@@ -29,9 +29,10 @@ public class TestMap {
         linkedHashMap.put("Hùng",25);
         linkedHashMap.put("Hiệp",30);
         System.out.println("Display entry in LinkedHashMap: ");
-        for (String str: linkedHashMap.keySet()){
-            System.out.println("Key: "+str+",Value: "+linkedHashMap.get(str));
-        }
+        System.out.println(linkedHashMap);
+//        for (String str: linkedHashMap.keySet()){
+//            System.out.println("Key: "+str+",Value: "+linkedHashMap.get(str));
+//        }
 
 
     }

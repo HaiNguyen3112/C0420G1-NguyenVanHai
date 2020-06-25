@@ -26,7 +26,7 @@ public class MyList <E> {
     }
     public void add (int index, E e){
         ensureCapa();
-        for (int i = size -1;i >= index;i++){
+        for (int i = size -1;i >= index;i--){
             elements[i+1] = elements[i];
         }
         elements[index] = e;

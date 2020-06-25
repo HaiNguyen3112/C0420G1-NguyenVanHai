@@ -1,6 +1,6 @@
 package IntroductionJava.TH.Bai10.Test;
 
-public interface MyList<E> extends java.lang.Iterable<E> {
+public interface   MyList<E> extends java.lang.Iterable<E> {
     public void add(E e);
 
     public void add(int index, E e);
