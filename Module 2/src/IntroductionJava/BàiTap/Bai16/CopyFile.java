@@ -4,25 +4,27 @@ import java.io.*;
 
 public class CopyFile {
     public static void main( String[] args ) throws IOException {
-        InputStream is = null;
-        OutputStream os = null;
+        InputStream inputStream = null;
+        OutputStream outputStream = null;
         try {
-            is = new FileInputStream("D:/source.txt");
-            os = new FileOutputStream("D:/destination.txt");
+            inputStream = new FileInputStream("D:/source.txt");
+            outputStream = new FileOutputStream("D:/destination.txt");
 
             byte[] buffer = new byte[1024];
             int length;
-            while ((length = is.read(buffer)) > 0) {
-                os.write(buffer, 0, length);
+            while ((length = inputStream.read(buffer)) > 0) {
+                outputStream.write(buffer, 0, length);
             }
         } finally {
-            if (is != null) {
-                is.close();
+            if (inputStream != null) {
+                inputStream.close();
             }
-            if (os != null) {
-                os.close();
+            if (outputStream != null) {
+                outputStream.close();
             }
         }
+
+        //test lại
         int c;
         File inFile = new File("D:/destination.txt");
         FileReader  fileReader = new FileReader(inFile);
