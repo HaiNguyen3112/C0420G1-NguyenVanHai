@@ -26,5 +26,6 @@ public class phoneNumber_Validate {
         System.out.println("Enter number: ");
         String str2 = sc.nextLine();
         System.out.println(pv.validate(str1,str2));
+
     }
 }
