@@ -1,6 +1,8 @@
 package models;
 
-public class Room extends Services {
+import java.util.Comparator;
+
+public class Room extends Services implements Comparable<Room> {
     private String freeService;
 
     public Room() {
@@ -32,5 +34,11 @@ public class Room extends Services {
     @Override
     public void showInfor() {
         System.out.println(this.toString());
+    }
+
+
+    @Override
+    public int compareTo( Room o ) {
+        return this.getId().compareTo(o.getId());
     }
 }

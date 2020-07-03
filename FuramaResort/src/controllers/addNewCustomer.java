@@ -2,6 +2,10 @@ package controllers;
 
 import models.*;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -107,16 +111,93 @@ public class addNewCustomer {
             case "Villa":{
                 addNewVilla tempVilla = new addNewVilla();
                 services = tempVilla.addNew();
+
+//                // Ghi thong tin Booking Villa vao file Booking
+//                BufferedWriter bufferedWriter =null;
+//                try {
+//                    FileWriter fileWriter = new FileWriter("src\\data\\Booking.csv",true);
+//                    bufferedWriter = new BufferedWriter(fileWriter);
+//
+//                    StringBuffer buffer = new StringBuffer();
+//                    buffer.append(services.getId()).append(",");
+//                    buffer.append(services.getNameService()).append(",");
+//                    buffer.append(services.getArea()).append(",");
+//                    buffer.append(services.getPrice()).append(",");
+//                    buffer.append(services.getNumberOfPeople()).append(",");
+//                    buffer.append(services.getTypeOfRent()).append(",");
+//                    buffer.append(((Villa)services).getTiengNghiKhac()).append(",");
+//                    buffer.append(((Villa)services).getTieuChuanPhong()).append(",");
+//                    buffer.append(((Villa)services).getAreaOfPool()).append(",");
+//                    buffer.append(((Villa)services).getNumOfFloor()).append(",");
+//
+//                    bufferedWriter.write(buffer.toString());
+//                    bufferedWriter.newLine();
+//
+//                    bufferedWriter.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
+
+
                 break;
             }
             case "House":{
                 addNewHouse tempHouse = new addNewHouse();
                 services = tempHouse.addNew();
+
+//                BufferedWriter bufferedWriter =null;
+//                try {
+//                    FileWriter fileWriter = new FileWriter("src\\data\\Booking.csv",true);
+//                    bufferedWriter = new BufferedWriter(fileWriter);
+//
+//                    StringBuffer buffer = new StringBuffer();
+//                    buffer.append(services.getId()).append(",");
+//                    buffer.append(services.getNameService()).append(",");
+//                    buffer.append(services.getArea()).append(",");
+//                    buffer.append(services.getPrice()).append(",");
+//                    buffer.append(services.getNumberOfPeople()).append(",");
+//                    buffer.append(services.getTypeOfRent()).append(",");
+//                    buffer.append(((House)services).getTiengNghiKhac()).append(",");
+//                    buffer.append(((House)services).getTieuChuanPhong()).append(",");
+//                    buffer.append(((House)services).getNumOfFloor()).append(",");
+//
+//                    bufferedWriter.write(buffer.toString());
+//                    bufferedWriter.newLine();
+//
+//                    bufferedWriter.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
                 break;
             }
             case "Room":{
                 addNewRoom tempRoom = new addNewRoom();
                 services = tempRoom.addNew();
+
+//                BufferedWriter bufferedWriter =null;
+//                try {
+//                    FileWriter fileWriter = new FileWriter("src\\data\\Booking.csv",true);
+//                    bufferedWriter = new BufferedWriter(fileWriter);
+//
+//                    StringBuffer buffer = new StringBuffer();
+//                    buffer.append(services.getId()).append(",");
+//                    buffer.append(services.getNameService()).append(",");
+//                    buffer.append(services.getArea()).append(",");
+//                    buffer.append(services.getPrice()).append(",");
+//                    buffer.append(services.getNumberOfPeople()).append(",");
+//                    buffer.append(services.getTypeOfRent()).append(",");
+//                    buffer.append(((Room)services).getFreeService()).append(",");
+//
+//                    bufferedWriter.write(buffer.toString());
+//                    bufferedWriter.newLine();
+//
+//                    bufferedWriter.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
                 break;
             }
         }

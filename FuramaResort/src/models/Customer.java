@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Customer<T extends  Customer> implements Comparator<T> {
+public class Customer implements Comparator<Customer> {
     private String name;
     private String birthDay;
     private String gender;
@@ -207,14 +207,6 @@ public class Customer<T extends  Customer> implements Comparator<T> {
 
 
     }
-//    public int compare(T o1, T o2){
-//        if (o1.getName() == o2.getName()){
-//            return o1.getBirthDay().substring(5,9).compareTo(o2.getBirthDay().substring(5,9));
-//        }
-//        else {
-//            return o1.getName()-o2.getName();
-//        }
-//    }
 
     public static void main( String[] args ) {
         //String name, String birthDay, String sex, int phoneNumber,
@@ -229,8 +221,12 @@ public class Customer<T extends  Customer> implements Comparator<T> {
     }
 
 
+
     @Override
-    public int compare( T o1, T o2 ) {
-        return 0;
+    public int compare( Customer o1, Customer o2 ) {
+        if (o1.getName() == o2.getName()){
+            return o1.getBirthDay().substring(5,9).compareTo(o2.getBirthDay().substring(5,9));
+        }
+        return Integer.parseInt(o1.getName()) - Integer.parseInt(o2.getName());
     }
 }

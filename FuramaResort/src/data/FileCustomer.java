@@ -86,7 +86,6 @@ public class FileCustomer {
             buffer.append(customer.getTypeOfCustomer()).append(",");
             buffer.append(customer.getAddress()).append(",");
 
-
             String temp = customer.getServices().getNameService();
             switch (temp){
                 case "Villa":{

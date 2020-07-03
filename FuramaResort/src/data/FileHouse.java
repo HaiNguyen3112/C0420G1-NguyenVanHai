@@ -24,7 +24,7 @@ public class FileHouse {
                 //String id, String nameService, int area, int price, int numberOfPeople, String typeOfRent,
                 // String tieuChuanPhong, String tiengNghiKhac, double areaOfPool, int numOfFloor
                 house = new House(arrStr[0], arrStr[1], Integer.parseInt(arrStr[2]), Integer.parseInt(arrStr[3]),
-                        Integer.parseInt(arrStr[4]),arrStr[5],arrStr[6],arrStr[7],Integer.parseInt(arrStr[9]));
+                        Integer.parseInt(arrStr[4]),arrStr[5],arrStr[6],arrStr[7],Integer.parseInt(arrStr[8]));
                 houseList.add(house);
             }
             bufferedReader.close();

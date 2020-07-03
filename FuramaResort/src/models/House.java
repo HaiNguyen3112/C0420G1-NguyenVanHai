@@ -1,6 +1,8 @@
 package models;
 
-public class House extends Services {
+import java.util.Comparator;
+
+public class House extends Services implements Comparable<House>, Comparator<House> {
     private String tieuChuanPhong;
     private String tiengNghiKhac;
     private int numOfFloor;
@@ -57,5 +59,21 @@ public class House extends Services {
     @Override
     public void showInfor() {
         System.out.println(toString());
+    }
+
+
+    @Override
+    public int compareTo( House o ) {
+        return this.getId().compareTo(o.getId());
+    }
+
+    @Override
+    public int compare( House o1, House o2 ) {
+        if (o1.getId() == o2.getId()){
+            return 0;
+        } else if (Integer.parseInt(o1.getId()) < Integer.parseInt(o2.getId())){
+            return -1;
+        }
+        return 1;
     }
 }

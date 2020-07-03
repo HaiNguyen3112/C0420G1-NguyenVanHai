@@ -26,7 +26,7 @@ public class MainControllers {
             System.out.println("2. Show Services");
             System.out.println("3. Add New Customer.");
             System.out.println("4. Show Information of Customer.");
-            System.out.println("5. Add New Booking.");
+            System.out.println("5. Add New Booking(Cinema).");
             System.out.println("6. Show Information of Employee.");
             System.out.println("7. Exit.");
             System.out.printf("Enter your choose: ");
@@ -46,6 +46,15 @@ public class MainControllers {
             case 4:
                 showInformationCustomer();
                 break;
+            case 5:
+                cinemma();
+                displayMainMenu();
+                break;
+            case 6:
+                showEmployee();
+                break;
+            case 7:
+                System.exit(1);
         }
 
     }
@@ -119,7 +128,7 @@ public class MainControllers {
             System.out.println("3. Show All Room.");
             System.out.println("4. Show All Name Villa Not Duplicate.");
             System.out.println("5. Show All Name House Not Duplicate.");
-            System.out.println("6. Show All Name Name Not Duplicate.");
+            System.out.println("6. Show All Name Room Not Duplicate.");
             System.out.println("7. Back to Menu.");
             System.out.println("8. Exit");
             System.out.printf("Enter your choose: ");
@@ -133,7 +142,7 @@ public class MainControllers {
                 for (Villa villa: villaList){
                     villa.showInfor();
                 }
-                displayMainMenu();
+                showService();
                 break;
             }
             case 2:{
@@ -143,7 +152,7 @@ public class MainControllers {
                 for (House house : houseList){
                     house.showInfor();
                 }
-                displayMainMenu();
+                showService();
                 break;
             }
             case 3:{
@@ -153,16 +162,20 @@ public class MainControllers {
                 for (Room room: roomList){
                     room.showInfor();
                 }
-                displayMainMenu();
+                showService();
                 break;
             }
             case 4:
                 showVillaNotDuplicate();
-                displayMainMenu();
+                showService();
+                break;
+            case 5:
+                showHouseNotDuplicate();
+                showService();
                 break;
             case 6:
-                showEmployee();
-                displayMainMenu();
+                showRoomNotDuplicate();
+                showService();
                 break;
             case 7:
                 displayMainMenu();
@@ -184,6 +197,7 @@ public class MainControllers {
         FileCustomer fileCustomer = new FileCustomer();
         List<Customer> customerList = new ArrayList<>();
         customerList = fileCustomer.readCSVFile();
+        Collections.sort(customerList, new CustomerComparator());
         for (Customer customer : customerList){
             System.out.println(customer);
         }
@@ -223,17 +237,67 @@ public class MainControllers {
         FileVilla fileVilla = new FileVilla();
         List<Villa> villaList = fileVilla.readCSVFile();
 
-        TreeSet<Villa> villaTreeSet = new TreeSet<Villa>();
+        TreeSet<Villa> villaTreeSet = new TreeSet<>();
 
         for (Villa villa: villaList){
-//            villaTreeSet.add();
+            villaTreeSet.add(villa);
+        }
+
+        for (Villa villa : villaTreeSet){
             System.out.println(villa);
         }
 
-//        for (Villa villa : villaTreeSet){
-//            System.out.println(villa);
-//        }
+    }
+    public void showHouseNotDuplicate(){
+        FileHouse fileHouse = new FileHouse();
+        List<House> houseList = fileHouse.readCSVFile();
 
+        TreeSet<House> houseTreeSet = new TreeSet<>();
+
+        for (House house : houseList){
+            houseTreeSet.add(house);
+        }
+
+        for (House house: houseTreeSet){
+            System.out.println(house);
+        }
+    }   public void showRoomNotDuplicate(){
+        FileRoom fileRoom = new FileRoom();
+        List<Room> roomList = fileRoom.readCSVFile();
+
+        TreeSet<Room> roomTreeSet = new TreeSet<>();
+
+        for (Room room : roomList){
+            roomTreeSet.add(room);
+        }
+
+        for (Room room: roomTreeSet){
+            System.out.println(room);
+        }
+    }
+    public void cinemma(){
+        FileCustomer fileCustomer = new FileCustomer();
+        List<Customer> customerList = fileCustomer.readCSVFile();
+        Scanner sc = new Scanner(System.in);
+
+        Queue<Customer> queue = new LinkedList<>();
+
+        int numTicket = customerList.size();
+
+        while (numTicket>0){
+            for (int i =0;i<customerList.size() && numTicket >0;i++){
+                System.out.println(customerList.get(i).getName()+" want to buy a ticket? Y|N");
+                String temp = sc.nextLine();
+                if (temp.equals("Y")){
+                    queue.add(customerList.get(i));
+                    customerList.remove(i);
+                    numTicket --;
+                }
+            }
+        }
+        for (Customer customer:queue){
+            System.out.println(customer);
+        }
     }
 
 }

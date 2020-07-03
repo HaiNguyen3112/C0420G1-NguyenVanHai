@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Villa extends Services {
+public class Villa extends Services implements Comparable<Villa> {
     private String tieuChuanPhong;
     private String tiengNghiKhac;
     private double areaOfPool;
@@ -85,5 +85,11 @@ public class Villa extends Services {
         for (int i =0;i<villaList.size();i++){
             villaList.get(i).showInfor();
         }
+    }
+
+    @Override
+    public int compareTo( Villa o ) {
+       int result=this.getId().compareTo(o.getId());
+       return result;
     }
 }
