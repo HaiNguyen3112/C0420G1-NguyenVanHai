@@ -1,5 +1,7 @@
 package models;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,10 +13,12 @@ public class Villa extends Services implements Comparable<Villa> {
 
 
     public Villa() {
+
     }
 
     public Villa( String id, String nameService, int area, int price, int numberOfPeople, String typeOfRent ) {
         super(id, nameService, area, price, numberOfPeople, typeOfRent);
+
     }
 
     public Villa( String id, String nameService, int area, int price, int numberOfPeople, String typeOfRent, String tieuChuanPhong, String tiengNghiKhac, double areaOfPool, int numOfFloor ) {
@@ -85,6 +89,7 @@ public class Villa extends Services implements Comparable<Villa> {
         for (int i =0;i<villaList.size();i++){
             villaList.get(i).showInfor();
         }
+
     }
 
     @Override

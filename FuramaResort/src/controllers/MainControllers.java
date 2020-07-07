@@ -29,7 +29,7 @@ public class MainControllers {
             System.out.println("5. Add New Booking(Cinema).");
             System.out.println("6. Show Information of Employee.");
             System.out.println("7. Exit.");
-            System.out.printf("Enter your choose: ");
+            System.out.print("Enter your choose: ");
             choose = sc.nextInt();
         } while (choose < 1 || choose > 7);
         switch (choose){
@@ -197,7 +197,8 @@ public class MainControllers {
         FileCustomer fileCustomer = new FileCustomer();
         List<Customer> customerList = new ArrayList<>();
         customerList = fileCustomer.readCSVFile();
-        Collections.sort(customerList, new CustomerComparator());
+//        customerList.sort(new CustomerComparator());
+        Collections.sort(customerList);
         for (Customer customer : customerList){
             System.out.println(customer);
         }
@@ -239,9 +240,8 @@ public class MainControllers {
 
         TreeSet<Villa> villaTreeSet = new TreeSet<>();
 
-        for (Villa villa: villaList){
-            villaTreeSet.add(villa);
-        }
+        villaTreeSet.addAll(villaList);
+        // TreeSet<Villa> villaTreeSet = new TreeSet<>(villaList);
 
         for (Villa villa : villaTreeSet){
             System.out.println(villa);
@@ -254,9 +254,7 @@ public class MainControllers {
 
         TreeSet<House> houseTreeSet = new TreeSet<>();
 
-        for (House house : houseList){
-            houseTreeSet.add(house);
-        }
+        houseTreeSet.addAll(houseList);
 
         for (House house: houseTreeSet){
             System.out.println(house);
@@ -267,9 +265,7 @@ public class MainControllers {
 
         TreeSet<Room> roomTreeSet = new TreeSet<>();
 
-        for (Room room : roomList){
-            roomTreeSet.add(room);
-        }
+        roomTreeSet.addAll(roomList);
 
         for (Room room: roomTreeSet){
             System.out.println(room);
